@@ -2,10 +2,10 @@
 interface Props {
   h2Text: string;
   description: string;
-  image: string;
+  srcImage: string;
 }
 
-const { h2Text, description } = Astro.props as Props;
+const { h2Text, description, srcImage } = Astro.props as Props;
 ---
 
 <article class:list={["relative"]}>
@@ -51,7 +51,7 @@ const { h2Text, description } = Astro.props as Props;
     <p class:list={["text-white"]}>{description}</p>
     <div>
       <img
-        src="/public/services.jpg"
+        src={srcImage}
         alt=""
         class:list={["rounded-3xl", "mt-8"]}
       />

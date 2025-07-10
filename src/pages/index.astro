@@ -1,15 +1,14 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import Cards from '../components/Cards.astro';
-import Header from '../components/Header.astro';
-import NavBar from '../components/NavBar.astro';
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Card from '../components/ui/Card.astro';
+import Header from '../components/ui/Header.astro';
+import NavBar from '../components/ui/NavBar.astro';
+import Cards from '../components/sections/Cards.astro';
+
 ---
 
 <Layout>
-	<NavBar option1="Home" option2="Services" option3="Chargers" option4="About GIBS" option5="Contact Us"/>
-    <Header title="GIBS" slogan="Industrial Battery Service"/>
-    
+    <Header h1Title="GIBS" h2Title="We clean and repair battery systems" slogan="Industrial Battery Service"/>
+    <NavBar option1="Home" option2="Services" option3="Chargers" option4="About GIBS" option5="Contact Us"/>
+    <Cards class='mt-20'/>
 </Layout>
