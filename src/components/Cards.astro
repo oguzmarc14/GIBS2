@@ -1,0 +1,60 @@
+---
+interface Props {
+  h2Text: string;
+  description: string;
+  image: string;
+}
+
+const { h2Text, description } = Astro.props as Props;
+---
+
+<article class:list={["relative"]}>
+  <div
+    class:list={[
+      "bg-gradient-to-br",
+      "from-green-900",
+      "via-green-800",
+      "to-green-700",
+      "w-80",
+      "h-120",
+      "p-6",
+      "rounded-2xl",
+      "border-2",
+      "border-green-950",
+      "relative",
+    ]}
+  >
+    <!-- Botón arriba a la derecha -->
+    <a
+      href="/services"
+      class:list={[
+        "absolute",
+        "top-3",
+        "right-3",
+        "bg-white",
+        "text-green-900",
+        "text-sm",
+        "px-3",
+        "py-1",
+        "rounded-full",
+        "shadow-md",
+        "hover:bg-green-100",
+        "transition",
+        "duration-200",
+        "font-semibold",
+      ]}
+    >
+      Ver más
+    </a>
+
+    <h2 class:list={["mb-3", "text-xl", "text-white"]}>{h2Text}</h2>
+    <p class:list={["text-white"]}>{description}</p>
+    <div>
+      <img
+        src="/public/services.jpg"
+        alt=""
+        class:list={["rounded-3xl", "mt-8"]}
+      />
+    </div>
+  </div>
+</article>
