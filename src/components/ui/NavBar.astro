@@ -10,27 +10,54 @@ interface Props {
 const { option1, option2, option3, option4, option5 } = Astro.props as Props;
 ---
 
-<article>
+<nav>
   <ul
     class:list={[
       "flex",
       "justify-center",
+      "items-center",
       "w-full",
-      "gap-6",
+      "gap-10",                       
       "bg-white",
       "font-semibold",
-      "h-8",
-      "text-green-950",
-      "shadow-2xl",
-      "shadow-green-950",
-      "items-center",
+      "text-green-900",
+      "shadow-md",
+      "h-16",                         
+      "text-lg",                      
+      "tracking-wide"
     ]}
   >
-    <li><a href="#">{option1}</a></li>
-    <li><a href="#">{option2}</a></li>
-    <li><a href="#">{option3}</a></li>
-    <li><a href="#">{option4}</a></li>
-    <li><a href="#">{option5}</a></li>
+    <li class="relative group">
+      <a href="#" class="transition duration-300 group-hover:text-green-700">
+        {option1}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+    <li class="relative group">
+      <a href="#" class="transition duration-300 group-hover:text-green-700">
+        {option2}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+    <li class="relative group">
+      <a href="#" class="transition duration-300 group-hover:text-green-700">
+        {option3}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+    <li class="relative group">
+      <a href="#" class="transition duration-300 group-hover:text-green-700">
+        {option4}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+    <li class="relative group">
+      <a href="#" class="transition duration-300 group-hover:text-green-700">
+        {option5}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
   </ul>
-</article>
+</nav>
+
 
