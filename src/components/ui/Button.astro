@@ -1,0 +1,36 @@
+---
+interface Props {
+  text: string;
+  href: string;
+  isGhost: boolean;
+  class?: string;
+}
+
+const { href, isGhost = false, text, class: className = "" } = Astro.props as Props;
+---
+
+<a
+    href={href}
+    class:list={[
+    "text-sm", 
+    "font-medium",
+    "w-44",
+    "py-3",
+    "text-center",
+    "rounded-xl",
+    "duration-200",
+    "border-2",
+    "group-hover:shadow-lg",
+    "mt-4",
+    className,
+    isGhost ? "bg-orange-500" : "bg-transparent",
+    isGhost ? 'text-white' : 'text-white',
+    isGhost ? 'border-brown' : 'border-brown',
+    isGhost ? 'hover:bg-orange-700' : 'hover:bg-green-950',
+    isGhost ? 'hover:scale-105' : 'hover:scale-105',
+    isGhost ? 'hover:text-white' : 'hover:text-white',
+    isGhost ? 'hover:border-brown' : 'hover:border-brown',
+  ]}
+>
+  {text}
+  </a>
