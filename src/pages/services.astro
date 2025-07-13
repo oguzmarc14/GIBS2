@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/ui/Header.astro";
+import NavBar from "../components/ui/NavBar.astro";
+import Servicess from "../components/sections/Servicess.astro";
+---
+
+<Layout>
+    <Header h1Title="GIBS" h2Title="We clean and repair battery systems" slogan="Industrial Battery Service"/>
+    <NavBar option1="Home" option2="Services" option3="Chargers" option4="About GIBS" option5="Contact Us"/>
+    <Servicess/>
+    <div class="rounded-2xl p-[6px] bg-gradient-to-r from-green-600 via-green-400 to-green-300 shadow-lg max-w-xs mx-auto">
+  <div class="bg-white rounded-2xl text-center p-6">
+    <img src="/battery-icon.svg" alt="Battery Icon" class="mx-auto mb-4 w-24 h-24" />
+
+    <h3 class="text-xl font-bold text-green-800">Battery Repair</h3>
+    <p class="text-gray-600 text-sm mt-2">
+      We inspect, test and restore your battery to extend its life and reduce replacement costs.
+    </p>
+
+    <a href="#" class="mt-4 inline-block text-green-600 font-medium hover:underline">
+      Read more
+    </a>
+  </div>
+</div>
+</Layout>
