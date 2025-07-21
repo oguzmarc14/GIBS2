@@ -1,0 +1,20 @@
+--- 
+import Footer from "../components/ui/Footer.astro";
+import Layout from "../layouts/Layout.astro"
+import Chargers from "../components/sections/Chargers.astro";
+import Subheader from "../components/ui/Subheader.astro"
+---
+
+<Layout>
+    <Subheader
+    srcImg="/logo.png"
+    h1Title="GIBS"
+    option1="Home"
+    option2="Services"
+    option3="Chargers"
+    option4="About GIBS"
+    option5="Contact Us"
+  />
+  <Chargers/>
+  <Footer/>
+</Layout>

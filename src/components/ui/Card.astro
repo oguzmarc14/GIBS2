@@ -3,57 +3,84 @@ interface Props {
   h2Text: string;
   description: string;
   srcImage: string;
+  href: string;
 }
 
-const { h2Text, description, srcImage } = Astro.props as Props;
+const { h2Text, description, href, srcImage,  } = Astro.props as Props;
 ---
 
-<article class:list={["relative"]}>
+<article>
   <div
     class:list={[
-      "bg-gradient-to-br",
-      "from-green-900",
-      "via-green-800",
-      "to-green-700",
+      "bg-white",
       "w-80",
-      "h-120",
+      "h-auto",
       "p-6",
-      "rounded-2xl",
-      "border-2",
-      "border-green-950",
+      "rounded-3xl",
+      "border-4",
+      "border-green-700",
+      "shadow-md",
       "relative",
+      "flex",
+      "flex-col",
+      "justify-between",
+      "hover:scale-105",
+      "hover:shadow-xl",
+      "hover:bg-emerald-950/30",
+      "duration-500"
     ]}
   >
-    <!-- Botón arriba a la derecha -->
+    <!-- Flecha SVG estilizada -->
     <a
-      href="/services"
-      class:list={[
-        "absolute",
-        "top-3",
-        "right-3",
-        "bg-white",
-        "text-green-900",
-        "text-sm",
-        "px-3",
-        "py-1",
-        "rounded-full",
-        "shadow-md",
-        "hover:bg-green-100",
-        "transition",
-        "duration-200",
-        "font-semibold",
-      ]}
-    >
-      Ver más
-    </a>
+  href={href}
+  title="Go to Services"
+  aria-label="Go to Services"
+  class:list={[
+    "absolute",
+    "top-3",
+    "right-3",
+    "bg-green-50",
+    "text-green-800",
+    "hover:text-green-900",
+    "hover:bg-green-950/50",
+    "rounded-full",
+    "p-2",
+    "transition",
+    "duration-300",
+    "shadow-sm",
+    "border-2",
+    "border-green-900",
+    "flex",
+    "items-center",
+    "justify-center"
+  ]}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+  </svg>
+</a>
 
-    <h2 class:list={["mb-3", "text-xl", "text-white"]}>{h2Text}</h2>
-    <p class:list={["text-white"]}>{description}</p>
+
     <div>
+      <h2 class:list={["mb-3", "text-xl", "text-green-900", "font-bold", "drop-shadow-sm"]}>
+        {h2Text}
+      </h2>
+      <p class:list={["text-gray-700", "text-sm", "leading-relaxed"]}>{description}</p>
+    </div>
+
+    <!-- Imagen destacada -->
+    <div class:list={["mt-6", "w-full", "h-56", "rounded-2xl", "overflow-hidden", "shadow-md"]}>
       <img
         src={srcImage}
-        alt=""
-        class:list={["rounded-3xl", "mt-8"]}
+        alt={h2Text}
+        class:list={["w-full", "h-full", "object-cover"]}
       />
     </div>
   </div>

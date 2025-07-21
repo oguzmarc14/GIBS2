@@ -1,0 +1,89 @@
+---
+interface Props {
+  h1Title: string;
+  srcImg: string;
+  class?: string;
+  option1: string;
+  option2: string;
+  option3: string;
+  option4: string;
+  option5: string;
+}
+
+const { h1Title, srcImg, option1, option2, option3, option4, option5, class: className = "" } = Astro.props as Props;
+---
+
+<div
+  class:list={[
+    "relative",
+    "place-items-center",
+    "text-center",
+    "h-fit",
+    "grid",
+    "bg-gradient-to-br",
+    "from-[#043F19]",
+    "via-[#022E0B]",
+    "to-[#003010]",
+    "backdrop-brightness-75",
+  ]}
+>
+  <!-- Contenido -->
+  <div class="relative grid grid-cols-2 items-center max-w-6xl w-full gap-2">
+    <div class:list={["w-fit", "h-fit", "flex", "items-center", "justify-center", "gap-3"]}>
+      <img src={srcImg} alt="Logo" class="w-24 h-24 mx-auto md:ml-12" />
+      <h1
+        class:list={["text-3xl", "font-extrabold", "text-white", "leading-tight", "drop-shadow-md"]}
+      >{h1Title}
+      </h1>
+    </div>
+    <div>
+        <nav>
+  <ul
+    class:list={[
+      "flex",
+      "justify-center",
+      "items-center",
+      "w-full",
+      "gap-10",                       
+      "font-semibold",
+      "text-white",
+      "shadow-md",
+      "h-16",                         
+      "text-lg",                      
+      "tracking-wide"
+    ]}
+  >
+    <li class="relative group">
+      <a href="/" class="transition duration-300 group-hover:text-green-700">
+        {option1}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+    <li class="relative group">
+      <a href="/services" class="transition duration-300 group-hover:text-green-700">
+        {option2}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+    <li class="relative group">
+      <a href="#" class="transition duration-300 group-hover:text-green-700">
+        {option3}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+    <li class="relative group">
+      <a href="#" class="transition duration-300 group-hover:text-green-700">
+        {option4}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+    <li class="relative group">
+      <a href="#" class="transition duration-300 group-hover:text-green-700">
+        {option5}
+        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </div>

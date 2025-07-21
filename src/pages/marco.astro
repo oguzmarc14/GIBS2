@@ -1,15 +1,6 @@
 ---
-import ReparacionesBaterias from "../components/sections/ReparacionesBaterias.astro";
-import Layout from "../layouts/Layout.astro";
+import SwiperSlider from "../components/ui/Slider.jsx";
 ---
 
-<Layout>
-  <ReparacionesBaterias
-    h2Title="No tires tu bateria nosotros la reparamos"
-    srcImage="/repararBateria.webp"
-    description="No tires tu batería — en GIBS la analizamos para ver si puede repararse y extender su vida útil."
-    textButton="Cotizar"
-    isGhost = {true}
-    href="#"
-  />
-</Layout>
+<SwiperSlider client:load />
+

@@ -1,9 +1,9 @@
 ---
 interface Props {
-  class?: string
+  class?: string;
 }
 
-const { class: className = ""  } = Astro.props as Props;
+const { class: className = "" } = Astro.props as Props;
 
 import Card from "../../components/ui/Card.astro";
 
@@ -13,41 +13,74 @@ const cardsData = [
     description:
       "GIBS can service your company’s battery needs on an emergency, service call, or  regular planned maintenance.  Let us show you how to save money AND be environmentally friendly!",
     srcImage: "/services.webp",
+    href: "/services",
   },
   {
     h2Text: "Chargers",
     description:
-      "GIBS is an authorized PBM Industrial Chargers dealer. PBM has been manufacturing industrial chargers for almost 50 years! We only sell quality products. CA efficiency, and UL listed products!",
-    srcImage: "/about.webp",
+      "GIBS is an authorized PBM Industrial Chargers dealer. PBM has been manufacturing industrial chargers for almost 50 years! We only sell quality products. CA efficiency.",
+    srcImage: "/charger.webp",
+        href: "/chargerss",
+
   },
   {
     h2Text: "About Us",
     description:
-      "Learn why the team at Green Industrial Battery Service is ahead of the competition!  Innovative and competitive, we earn our business through trust and respect, and we value our customers. ahora con este hazme lo anterior",
+      "Learn why the team at Green Industrial Battery Service is ahead of the competition!  Innovative and competitive, we earn our business through trust and respect, and we value our customers.",
     srcImage: "/about.webp",
+        href: "/about",
+
   },
 ];
 ---
-<section class:list={["container", "mx-auto", className]}>
+
+<section class:list={["container", "mx-auto", , className]}>
   <div class:list={["text-center", "max-w-7xl", "mx-auto", "mb-16"]}>
-    <h3 class:list={["text-6xl", "font-bold", "text-green-900", "mb-8", "font-osva"]}>
+    <h3
+      class:list={[
+        "text-6xl",
+        "font-bold",
+        "text-green-900",
+        "mb-8",
+        "font-osva",
+      ]}
+    >
       Leading experts in industrial battery systems
     </h3>
-    <p class:list={["text-lg", "text-gray-700", "max-w-4xl", "font-serif", "mx-auto"]}>
-      Green Industrial Battery Service combines experience, cutting-edge technology, and personalized support to keep your operations running smoothly and efficiently.
+    <p
+      class:list={[
+        "text-lg",
+        "text-gray-700",
+        "max-w-4xl",
+        "font-serif",
+        "mx-auto",
+      ]}
+    >
+      Green Industrial Battery Service combines experience, cutting-edge
+      technology, and personalized support to keep your operations running
+      smoothly and efficiently.
     </p>
   </div>
 
-  <div class:list={["flex", "justify-center", "items-start", "gap-28", "flex-wrap"]}>
+  <div
+    class:list={[
+      "flex",
+      "justify-center",
+      "items-start",
+      "gap-28",
+      "flex-wrap",
+    ]}
+  >
     {
       cardsData.map((card) => (
         <Card
           h2Text={card.h2Text}
           description={card.description}
           srcImage={card.srcImage}
+          href={card.href}
+
         />
       ))
     }
   </div>
 </section>
-

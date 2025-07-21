@@ -1,26 +1,56 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/ui/Header.astro";
-import NavBar from "../components/ui/NavBar.astro";
 import Servicess from "../components/sections/Servicess.astro";
+import SubHeader from "../components/ui/SubHeader.astro";
+import Nueva from "../components/sections/Nueva.astro";
+import Sub from "../components/sections/Sub.astro"
+import Localidad from "../components/sections/Localidad.astro"
 ---
 
 <Layout>
-    <Header h1Title="GIBS" h2Title="We clean and repair battery systems" slogan="Industrial Battery Service"/>
-    <NavBar option1="Home" option2="Services" option3="Chargers" option4="About GIBS" option5="Contact Us"/>
-    <Servicess/>
-    <div class="rounded-2xl p-[6px] bg-gradient-to-r from-green-600 via-green-400 to-green-300 shadow-lg max-w-xs mx-auto">
-  <div class="bg-white rounded-2xl text-center p-6">
-    <img src="/battery-icon.svg" alt="Battery Icon" class="mx-auto mb-4 w-24 h-24" />
-
-    <h3 class="text-xl font-bold text-green-800">Battery Repair</h3>
-    <p class="text-gray-600 text-sm mt-2">
-      We inspect, test and restore your battery to extend its life and reduce replacement costs.
-    </p>
-
-    <a href="#" class="mt-4 inline-block text-green-600 font-medium hover:underline">
-      Read more
-    </a>
-  </div>
-</div>
+  <SubHeader
+    srcImg="/logo.png"
+    h1Title="GIBS"
+    option1="Home"
+    option2="Services"
+    option3="Chargers"
+    option4="About GIBS"
+    option5="Contact Us"
+  />
+  <Sub/>
+  <Nueva/>
+  <Localidad/>
 </Layout>
+
+<!-- <div
+    class="group relative w-full max-w-sm h-[270px] hover:h-[540px] transition-all duration-700 ease-in-out overflow-hidden rounded-xl bg-white shadow-xl border border-green-800 cursor-pointer"
+  >
+    <img
+      src="/card1.webp"
+      alt="Battery Service"
+      class="absolute top-0 left-0 w-full h-[540px] object-cover z-0 transition-[clip-path] duration-700 ease-in-out
+           [clip-path:inset(25%_0_25%_0)] group-hover:[clip-path:inset(0_0_0_0)]"
+    />
+
+    <div
+      class="absolute bottom-0 left-0 w-full z-10 px-6 py-4 bg-gradient-to-t from-green-950/90 via-green-900/70 to-transparent text-white transition-all duration-700"
+    >
+      <h3
+        class="text-lg font-bold tracking-wide opacity-90 transition-all duration-700 group-hover:translate-y-[-20px] group-hover:opacity-100"
+      >
+        Battery Maintenance
+      </h3>
+      <p
+        class="text-sm mt-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-700 delay-150"
+      >
+        We analyze and restore industrial batteries to improve efficiency and
+        extend their lifespan.
+      </p>
+      <a
+        href="#"
+        class="inline-block mt-4 text-lime-300 text-sm font-semibold opacity-0 group-hover:opacity-100 transition duration-500 delay-300 hover:underline"
+      >
+        Learn more →
+      </a>
+    </div>
+  </div> -->

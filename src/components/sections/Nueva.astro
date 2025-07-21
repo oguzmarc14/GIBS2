@@ -1,0 +1,223 @@
+---
+const services = [
+  {
+    title: "Battery Replacement / Repair",
+    description:
+      "We evaluate and repair or recondition your battery. Includes detailed individual cell testing and reporting to help you make the best decision.",
+    icon: "replace",
+    href: "/services#battery-repair",
+  },
+  {
+    title: "Clean and Neutralize",
+    description:
+      "We remove harmful corrosion from batteries, compartments, and stations using CAL-OSHA approved methods.",
+    icon: "clean",
+    href: "/services#cleaning",
+  },
+  {
+    title: "Acid Adjustment",
+    description:
+      "Certified technicians restore acid to manufacturer-recommended levels and dispose of spent acid in an environmentally safe way.",
+    icon: "acid",
+    href: "/services#acid-adjustment",
+  },
+  {
+    title: "Charging Stations",
+    description:
+      "We clean and test your charging stations to ensure optimum efficiency and battery protection.",
+    icon: "charging",
+    href: "/services#charging-stations",
+  },
+  {
+    title: "Watering Systems",
+    description:
+      "We evaluate and install battery watering systems to extend battery life and improve performance and cleanliness.",
+    icon: "water",
+    href: "/services#watering",
+  },
+  {
+    title: "Preventative Maintenance",
+    description:
+      "Avoid costly downtime and repairs. Our maintenance contracts keep your equipment running and costs low.",
+    icon: "maintenance",
+    href: "/services#preventative",
+  },
+  {
+    title: "Charger Repair",
+    description:
+      "With over 35 years of combined experience, we test, diagnose, and repair chargers on-site or in-house, fast and reliably.",
+    icon: "charger",
+    href: "/services#charger-repair",
+  },
+];
+---
+
+<section class="bg-gradient-to-br from-emerald-950/15 to-emerald-700/20 py-20 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-5xl font-bold text-green-900 mb-6 font-osva">
+      Our Services
+    </h2>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12 font-serif">
+      We keep your industrial battery systems running with expert support,
+      certified chargers, and sustainable solutions.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-12">
+      {
+        services.map((service) => (
+          <div class="w-full sm:w-[300px] bg-white border border-green-200 shadow-lg rounded-2xl p-6 text-left transition-transform duration-300 hover:scale-105">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+              {service.icon === "replace" && (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-8 h-8 text-green-900"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M17 1l4 4-4 4M7 23l-4-4 4-4M20 5a9 9 0 11-16 10"
+    />
+  </svg>
+)}
+              
+              {service.icon === "clean" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8 text-green-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 18h18M6 9h12l1 5H5l1-5zm3-5h6l1 4H8l1-4z"
+                  />
+                </svg>
+              )}
+
+              {service.icon === "acid" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8 text-green-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 17V7l6-3v13a3 3 0 11-6 0z"
+                  />
+                </svg>
+              )}
+
+              {service.icon === "charging" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8 text-green-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 3v10H8l4 8v-6h3l-4-12z"
+                  />
+                </svg>
+              )}
+
+              {service.icon === "water" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8 text-green-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 3C12 3 6 9 6 13a6 6 0 0012 0c0-4-6-10-6-10z"
+                  />
+                </svg>
+              )}
+
+              {service.icon === "maintenance" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8 text-green-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.75 3a1.5 1.5 0 012.45 0L13 4.5m0 0l2.25 1.5M13 4.5v3M13 7.5h3l1.5 2.25m0 0a1.5 1.5 0 010 2.45L18 13m0 0l-1.5 2.25M18 13h-3m0 0v3l-2.25 1.5a1.5 1.5 0 01-2.45 0L11 18m0 0l-2.25-1.5M11 18v-3M11 15H8l-1.5-2.25a1.5 1.5 0 010-2.45L8 9m0 0L9.5 6.75"
+                  />
+                </svg>
+              )}
+
+              {service.icon === "charger-repair" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8 text-green-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11 17l-5-5h3V7h4v5h3l-5 5z"
+                  />
+                </svg>
+              )}
+
+              {service.icon === "charger" && (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-8 h-8 text-green-900"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M13 10V3L4 14h7v7l9-11h-7z"
+    />
+  </svg>
+)}
+
+            </div>
+
+            <h3 class="text-xl font-bold text-green-900 mb-2">
+              {service.title}
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">{service.description}</p>
+            <a
+              href={service.href}
+              class="text-green-700 font-semibold hover:underline"
+            >
+              Learn more →
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
