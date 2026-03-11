@@ -8,35 +8,101 @@ interface Props {
 }
 
 const { h1Title, h2Title, slogan, srcImg, class:className = "" } = Astro.props as Props;
+const logoLeft = h1Title.slice(0, 2);
+const logoRight = h1Title.slice(2);
 ---
 
 <div
   class:list={[
-    "relative",
-    "place-items-center",
-    "text-center",
-    "h-140",
+    "relative overflow-hidden",
     "grid",
-    "bg-gradient-to-br",
-    "from-[#043F19]",
-    "via-[#022E0B]",
-    "to-[#003010]",
-    "backdrop-brightness-75",
+    "min-h-[78vh]",
+    "place-items-center",
+    "px-6",
+    "py-16",
+    "text-white",
+    "bg-[linear-gradient(120deg,#041b22_0%,#073340_48%,#0c6f56_100%)]",
+    className,
   ]}
 >
-  <!-- Contenido -->
-  <div class="relative grid grid-cols-2 items-center max-w-6xl w-full gap-2">
-    <!-- Logo -->
-    <img src={srcImg} alt="Logo" class="w-96 h-96 mx-auto md:ml-12" />
-    <!-- Texto -->
-    <div>
-      <h1
-        class="text-5xl md:text-9xl font-extrabold text-white leading-tight drop-shadow-md"
-      >
-        {h1Title}
+  <div class="electric-line electric-line-left"></div>
+  <div class="electric-line electric-line-right"></div>
+
+  <div class="relative z-10 grid w-full max-w-6xl grid-cols-1 items-center gap-8 md:grid-cols-2">
+    <img
+      src={srcImg}
+      alt="Logo GIBS"
+      class="mx-auto w-72 drop-shadow-[0_18px_50px_rgba(0,0,0,0.36)] md:w-[26rem]"
+    />
+
+    <div class="rounded-3xl border border-white/18 bg-white/8 p-8 backdrop-blur-md">
+      <h1 class="logo-electric" aria-label={h1Title}>
+        <span>{logoLeft}</span>
+        <span class="logo-bolt" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" role="presentation">
+            <path d="M13.2 1 5.6 13h4.8L8.8 23 18.4 9h-4.7L13.2 1Z" fill="currentColor"></path>
+          </svg>
+        </span>
+        <span>{logoRight}</span>
       </h1>
-      <h2 class="lg:text-3xl md:text-3xl text-white/90 mt-6">{h2Title}</h2>
-      <p class="text-lg text-white/80 mt-2">{slogan}</p>
+
+      <h2 class="mt-4 text-xl font-semibold text-white/92 md:text-3xl">{h2Title}</h2>
+      <p class="mt-3 max-w-xl text-base text-white/76 md:text-lg">{slogan}</p>
+
+      <div class="mt-7 h-px w-32 bg-gradient-to-r from-[#ffb347] via-[#30b5ff] to-transparent"></div>
     </div>
   </div>
 </div>
+
+<style>
+  .logo-electric {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15em;
+    font-family: "Cinzel", serif;
+    font-size: clamp(2.7rem, 8vw, 6rem);
+    letter-spacing: 0.12em;
+    font-weight: 800;
+    color: #f7fbfb;
+    text-shadow: 0 0 12px rgba(48, 181, 255, 0.35);
+  }
+
+  .logo-bolt {
+    display: inline-flex;
+    width: 0.75em;
+    color: #ffb347;
+    filter: drop-shadow(0 0 9px rgba(255, 179, 71, 0.6));
+    animation: pulseBolt 1.8s ease-in-out infinite;
+  }
+
+  .electric-line {
+    position: absolute;
+    top: 12%;
+    width: 45%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(48, 181, 255, 0.66), transparent);
+    opacity: 0.9;
+  }
+
+  .electric-line-left {
+    left: -10%;
+    transform: rotate(8deg);
+  }
+
+  .electric-line-right {
+    right: -10%;
+    transform: rotate(-8deg);
+  }
+
+  @keyframes pulseBolt {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.95;
+    }
+    50% {
+      transform: scale(1.08);
+      opacity: 1;
+    }
+  }
+</style>

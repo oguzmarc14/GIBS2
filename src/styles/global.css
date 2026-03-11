@@ -1,1 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+:root {
+	--gibs-deep: #041b22;
+	--gibs-ink: #0b2a32;
+	--gibs-emerald: #0c6f56;
+	--gibs-cyan: #30b5ff;
+	--gibs-amber: #ffb347;
+	--gibs-paper: #f5f8f6;
+}
+
+html,
+body {
+	margin: 0;
+	width: 100%;
+	min-height: 100%;
+}
+
+body {
+	font-family: "Manrope", sans-serif;
+	color: #0c1b22;
+	background:
+		radial-gradient(circle at 8% 12%, rgba(48, 181, 255, 0.16), transparent 36%),
+		radial-gradient(circle at 88% 0%, rgba(12, 111, 86, 0.24), transparent 40%),
+		linear-gradient(180deg, #eef4f2 0%, #edf3ef 38%, #f8faf9 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Cinzel", serif;
+	letter-spacing: 0.02em;
+}
+
+.font-brand {
+	font-family: "Cinzel", serif;
+}
+
+::selection {
+	background: rgba(48, 181, 255, 0.28);
+	color: #032a36;
+}

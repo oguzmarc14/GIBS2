@@ -15,39 +15,42 @@ const {
   h2Title,
   srcImage,
   description,
+  textButton,
+  href,
   class: className = "",
 } = Astro.props as Props;
 ---
 
-<article class="relative">
+<article class:list={["relative overflow-hidden", className]}>
   <img
-    class="h-screen w-full object-center"
+    class="h-[76vh] min-h-[30rem] w-full object-cover object-center"
     src={srcImage}
     alt="Imagen de batería"
   />
 
+  <div class="absolute inset-0 bg-[linear-gradient(106deg,rgba(4,27,34,0.92)_0%,rgba(4,27,34,0.7)_44%,rgba(4,27,34,0.2)_100%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(48,181,255,0.22),transparent_35%)]"></div>
+
   <div
     class:list={[
-      "absolute",
-      "left-0",
-      "top-1/2",
-      "-translate-y-1/2",
+      "absolute inset-0",
       "flex",
       "flex-col",
+      "justify-center",
       "text-white",
       "text-left",
-      "px-24",
-      "w-[55%]",
-      "hover:scale-105",
-      "transition-transform",
-      "duration-150"
+      "px-6 md:px-20",
+      "w-full md:w-[64%]",
     ]}
   >
-    <h2 class="text-7xl font-bold mb-4">{h2Title}</h2>
-    <h3 class="text-xl ml-1">{description}</h3>
-    <div class="flex flex-row gap-5 mt-6">
-      <Button href="#" text="Cotizar" isGhost={true} />
-      <Button href="#" text="Cotizar" isGhost={false} />
+    <span class="mb-4 inline-flex w-fit items-center rounded-full border border-cyan-300/40 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100 backdrop-blur-sm">
+      Battery Recovery Lab
+    </span>
+    <h2 class="text-3xl font-bold leading-tight md:text-6xl">{h2Title}</h2>
+    <h3 class="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-xl">{description}</h3>
+    <div class="mt-7 flex flex-row gap-4">
+      <Button href={href} text={textButton} isGhost={true} />
+      <Button href="/services" text="Ver servicios" isGhost={false} />
     </div>
   </div>
 </article>

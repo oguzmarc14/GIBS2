@@ -17,44 +17,49 @@ const { option1, option2, option3, option4, option5 } = Astro.props as Props;
       "justify-center",
       "items-center",
       "w-full",
-      "gap-10",                       
-      "bg-white",
+      "flex-wrap",
+      "gap-4 md:gap-9",
+      "bg-white/82",
+      "backdrop-blur-md",
       "font-semibold",
-      "text-green-900",
-      "shadow-md",
-      "h-16",                         
-      "text-lg",                      
-      "tracking-wide"
+      "text-slate-800",
+      "shadow-[0_14px_30px_rgba(6,44,58,0.14)]",
+      "h-auto min-h-16",
+      "px-5 py-3",
+      "text-sm md:text-base",
+      "tracking-[0.1em]",
+      "border-y border-slate-200/70",
+      "uppercase",
     ]}
   >
     <li class="relative group">
-      <a href="/" class="transition duration-300 group-hover:text-green-700">
+      <a href="/" class="transition duration-300 group-hover:text-[#0c6f56]">
         {option1}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     <li class="relative group">
-      <a href="/services" class="transition duration-300 group-hover:text-green-700">
+      <a href="/services" class="transition duration-300 group-hover:text-[#0c6f56]">
         {option2}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     <li class="relative group">
-      <a href="#" class="transition duration-300 group-hover:text-green-700">
+      <a href="/chargerss" class="transition duration-300 group-hover:text-[#0c6f56]">
         {option3}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     <li class="relative group">
-      <a href="#" class="transition duration-300 group-hover:text-green-700">
+      <a href="/marco" class="transition duration-300 group-hover:text-[#0c6f56]">
         {option4}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     <li class="relative group">
-      <a href="#" class="transition duration-300 group-hover:text-green-700">
+      <a href="/services" class="transition duration-300 group-hover:text-[#0c6f56]">
         {option5}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
   </ul>

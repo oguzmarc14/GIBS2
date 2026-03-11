@@ -4,84 +4,127 @@ interface Props {
   description: string;
   srcImage: string;
   href: string;
+  chip?: string;
 }
 
-const { h2Text, description, href, srcImage,  } = Astro.props as Props;
+const { h2Text, description, href, srcImage, chip = "GIBS Solution" } = Astro.props as Props;
 ---
 
-<article>
-  <div
-    class:list={[
-      "bg-white",
-      "w-80",
-      "h-auto",
-      "p-6",
-      "rounded-3xl",
-      "border-4",
-      "border-green-700",
-      "shadow-md",
-      "relative",
-      "flex",
-      "flex-col",
-      "justify-between",
-      "hover:scale-105",
-      "hover:shadow-xl",
-      "hover:bg-emerald-950/30",
-      "duration-500"
-    ]}
-  >
-    <!-- Flecha SVG estilizada -->
-    <a
-  href={href}
-  title="Go to Services"
-  aria-label="Go to Services"
-  class:list={[
-    "absolute",
-    "top-3",
-    "right-3",
-    "bg-green-50",
-    "text-green-800",
-    "hover:text-green-900",
-    "hover:bg-green-950/50",
-    "rounded-full",
-    "p-2",
-    "transition",
-    "duration-300",
-    "shadow-sm",
-    "border-2",
-    "border-green-900",
-    "flex",
-    "items-center",
-    "justify-center"
-  ]}
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-5 h-5"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    stroke-width="2"
-  >
-    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-  </svg>
-</a>
+<article class="card-shell">
+  <a href={href} title={`Open ${h2Text}`} aria-label={`Open ${h2Text}`} class="card-action">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
 
+  <span class="card-chip">{chip}</span>
 
-    <div>
-      <h2 class:list={["mb-3", "text-xl", "text-green-900", "font-bold", "drop-shadow-sm"]}>
-        {h2Text}
-      </h2>
-      <p class:list={["text-gray-700", "text-sm", "leading-relaxed"]}>{description}</p>
-    </div>
+  <h2 class="card-title">{h2Text}</h2>
+  <p class="card-copy">{description}</p>
 
-    <!-- Imagen destacada -->
-    <div class:list={["mt-6", "w-full", "h-56", "rounded-2xl", "overflow-hidden", "shadow-md"]}>
-      <img
-        src={srcImage}
-        alt={h2Text}
-        class:list={["w-full", "h-full", "object-cover"]}
-      />
-    </div>
+  <div class="card-media">
+    <img src={srcImage} alt={h2Text} class="h-full w-full object-cover" />
   </div>
 </article>
+
+<style>
+  .card-shell {
+    position: relative;
+    width: min(100%, 22rem);
+    min-height: 32rem;
+    border-radius: 1.75rem;
+    padding: 1.35rem;
+    background:
+      linear-gradient(150deg, rgba(255, 255, 255, 0.94), rgba(244, 249, 247, 0.98)) padding-box,
+      linear-gradient(130deg, rgba(48, 181, 255, 0.8), rgba(12, 111, 86, 0.95)) border-box;
+    border: 2px solid transparent;
+    box-shadow: 0 16px 36px rgba(5, 40, 52, 0.16);
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .card-shell:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 42px rgba(5, 40, 52, 0.22);
+  }
+
+  .card-shell::after {
+    content: "";
+    position: absolute;
+    inset: auto -30% -35% -30%;
+    height: 12rem;
+    background: radial-gradient(circle, rgba(48, 181, 255, 0.15), transparent 68%);
+    pointer-events: none;
+  }
+
+  .card-action {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    border: 1px solid rgba(5, 53, 68, 0.3);
+    background: rgba(255, 255, 255, 0.75);
+    color: #0c6f56;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+  .card-action:hover {
+    color: white;
+    background: #0c6f56;
+    border-color: transparent;
+  }
+
+  .card-chip {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: #0a4e6b;
+    background: rgba(48, 181, 255, 0.14);
+    border: 1px solid rgba(48, 181, 255, 0.28);
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-title {
+    margin: 0 0 0.75rem;
+    color: #08343f;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    font-weight: 800;
+  }
+
+  .card-copy {
+    margin: 0;
+    color: #2a4b56;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .card-media {
+    margin-top: 1.25rem;
+    width: 100%;
+    height: 15.5rem;
+    border-radius: 1.15rem;
+    overflow: hidden;
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.18);
+  }
+
+  .card-media img {
+    transition: transform 0.45s ease;
+  }
+
+  .card-shell:hover .card-media img {
+    transform: scale(1.06);
+  }
+</style>

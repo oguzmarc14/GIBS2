@@ -10,64 +10,71 @@ import Card from "../../components/ui/Card.astro";
 const cardsData = [
   {
     h2Text: "Services",
+    chip: "Industrial Care",
     description:
-      "GIBS can service your company’s battery needs on an emergency, service call, or  regular planned maintenance.  Let us show you how to save money AND be environmentally friendly!",
+      "Emergency response, scheduled maintenance, and complete battery health programs designed to reduce downtime and operational costs.",
     srcImage: "/services.webp",
     href: "/services",
   },
   {
     h2Text: "Chargers",
+    chip: "Power Systems",
     description:
-      "GIBS is an authorized PBM Industrial Chargers dealer. PBM has been manufacturing industrial chargers for almost 50 years! We only sell quality products. CA efficiency.",
+      "Authorized PBM industrial chargers with proven reliability, high charging efficiency, and the right configuration for your fleet.",
     srcImage: "/charger.webp",
-        href: "/chargerss",
-
+    href: "/chargerss",
   },
   {
     h2Text: "About Us",
+    chip: "Trusted Team",
     description:
-      "Learn why the team at Green Industrial Battery Service is ahead of the competition!  Innovative and competitive, we earn our business through trust and respect, and we value our customers.",
+      "A technical team focused on long-term partnerships, practical engineering, and dependable support for industrial energy operations.",
     srcImage: "/about.webp",
-        href: "/about",
-
+    href: "/marco",
   },
 ];
 ---
 
-<section class:list={["container", "mx-auto", , className]}>
-  <div class:list={["text-center", "max-w-7xl", "mx-auto", "mb-16"]}>
+<section class:list={["relative", "overflow-hidden", "mx-auto", "max-w-7xl", "px-6", "py-20", className]}>
+  <div class="absolute -left-28 top-16 h-64 w-64 rounded-full bg-cyan-300/20 blur-3xl"></div>
+  <div class="absolute -right-28 bottom-0 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl"></div>
+
+  <div class:list={["relative", "text-center", "max-w-4xl", "mx-auto", "mb-14"]}>
+    <p class="mb-4 inline-block rounded-full border border-[#0c6f56]/20 bg-white/70 px-4 py-1 text-xs font-bold uppercase tracking-[0.14em] text-[#0c6f56]">
+      Industrial Energy Excellence
+    </p>
     <h3
       class:list={[
-        "text-6xl",
+        "text-4xl md:text-6xl",
         "font-bold",
-        "text-green-900",
-        "mb-8",
-        "font-osva",
+        "text-[#08343f]",
+        "mb-6",
       ]}
     >
-      Leading experts in industrial battery systems
+      Precision Solutions for Battery Performance
     </h3>
     <p
       class:list={[
-        "text-lg",
-        "text-gray-700",
-        "max-w-4xl",
-        "font-serif",
+        "text-base md:text-lg",
+        "text-slate-700",
+        "max-w-3xl",
         "mx-auto",
+        "leading-relaxed",
       ]}
     >
-      Green Industrial Battery Service combines experience, cutting-edge
-      technology, and personalized support to keep your operations running
-      smoothly and efficiently.
+      We combine technical know-how, high-quality equipment, and responsive support
+      to keep your operation efficient, safe, and always ready.
     </p>
   </div>
 
   <div
     class:list={[
+      "relative",
+      "z-10",
       "flex",
       "justify-center",
       "items-start",
-      "gap-28",
+      "gap-8 lg:gap-10",
       "flex-wrap",
     ]}
   >
@@ -75,10 +82,10 @@ const cardsData = [
       cardsData.map((card) => (
         <Card
           h2Text={card.h2Text}
+          chip={card.chip}
           description={card.description}
           srcImage={card.srcImage}
           href={card.href}
-
         />
       ))
     }
