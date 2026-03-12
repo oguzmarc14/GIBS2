@@ -5,10 +5,13 @@ interface Props {
   h2Title: string;
   srcImage: string;
   description: string;
-  textButton: string;
-  href: string;
   class?: string;
   isGhost?: boolean;
+  textButton1: string;
+  textButton2: string;
+  hrefButton1: string;
+  hrefButton2: string;
+
 }
 
 const {
@@ -16,12 +19,17 @@ const {
   srcImage,
   description,
   class: className = "",
+  textButton1,
+  textButton2,
+  hrefButton1,
+  hrefButton2,
+
 } = Astro.props as Props;
 ---
 
-<article class="relative">
+<article class:list={["relative", className]}>
   <img
-    class="h-118 w-full object-center"
+    class="h-118 w-full object-cover"
     src={srcImage}
     alt="Imagen de batería"
   />
@@ -55,8 +63,8 @@ const {
     </h2>
     <h3 class:list={["text-xs", "ml-1"]}>{description}</h3>
     <div class="flex flex-row gap-5 mt-6">
-      <Button href="#" text="Cotizar" isGhost={true} />
-      <Button href="#" text="Cotizar" isGhost={false} />
+      <Button href={hrefButton1} text={textButton1} isGhost={true} />
+      <Button href={hrefButton2} text={textButton2} isGhost={false} />
     </div>
   </div>
 </article>
