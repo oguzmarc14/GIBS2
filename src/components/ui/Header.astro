@@ -2,19 +2,19 @@
 interface Props {
   h1Title: string;
   h2Title: string;
-  slogan: string;
+  description: string;
 }
 
-const { h1Title, h2Title, slogan } = Astro.props as Props;
+const { h1Title, h2Title, description } = Astro.props as Props;
 ---
 
-<div
+<header
   class:list={[
-    "relative",
-    "place-items-center",
-    "text-center",
-    "h-104",
-    "grid",
+    "flex",
+    "flex-row",
+    "items-center",
+    "justify-between",
+    "w-full",
     "bg-gradient-to-br",
     "from-[#07702b]",
     "via-[#022E0B]",
@@ -22,36 +22,47 @@ const { h1Title, h2Title, slogan } = Astro.props as Props;
     "backdrop-brightness-75",
   ]}
 >
-  <!-- Contenido -->
-  <div class="relative grid grid-cols-2 items-center max-w-6xl w-full gap-2">
-    <!-- Logo -->
-    <img src="/logo.png" alt="Logo" class="w-96 h-96 mx-auto md:ml-12" />
-    <!-- Texto -->
-    <div>
-      <div class="mb-4">
-        <span
-          class="block h-[8px] w-84 md:w-[32rem] bg-gradient-to-r from-transparent via-amber-300 to-transparent"
-        ></span>
-      </div>
-      <h1
-        class="inline-flex items-end text-5xl md:text-9xl font-extrabold text-white leading-tight drop-shadow-md"
-      >
-        <span>{h1Title}</span>
-        <span class="inline-flex w-32 h-36 text-amber-300 lightning-wrap">
-          <svg class="h-full w-full lightning-bolt" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M13.2 1 5.6 13h4.8L8.8 23 18.4 9h-4.7L13.2 1Z"
-              fill="currentColor"></path>
-          </svg>
-        </span>
-      </h1>
-      <h2 class="lg:text-3xl md:text-3xl text-white/90 mt-6 -ml-8">
-        {h2Title}
-      </h2>
-      <p class="text-lg text-white/80 mt-2 -ml-14">{slogan}</p>
-    </div>
+  <img
+    src="/logo.png"
+    alt="Logo"
+    class:list={["w-40", "h-40", "md:w-52", "md:h-52"]}
+  />
+
+  <h3
+    class:list={[
+      "text-white",
+      "border-2",
+      "border-amber-200",
+      "rounded-2xl",
+      "p-2",
+      "ml-46",
+      "hover:scale-105",
+      "duration-200"
+    ]}
+  >
+    {description}
+  </h3>
+
+  <div class="flex flex-col items-center">
+    <h1
+      class="inline-flex items-end text-3xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-md"
+    >
+      <span>{h1Title}</span>
+      <span class="inline-flex w-22 h-22 text-amber-300 lightning-wrap">
+        <svg
+          class="h-full w-full lightning-bolt"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M13.2 1 5.6 13h4.8L8.8 23 18.4 9h-4.7L13.2 1Z"
+            fill="currentColor"></path>
+        </svg>
+      </span>
+    </h1>
+    <h2 class="mt-1 text-sm md:text-xl text-white/90 mr-8">{h2Title}</h2>
   </div>
-</div>
+</header>
 
 <style>
   .lightning-wrap {
@@ -69,32 +80,28 @@ const { h1Title, h2Title, slogan } = Astro.props as Props;
     100% {
       opacity: 0.98;
       transform: scale(0.98) rotate(-1deg);
-      filter:
-        drop-shadow(0 0 14px rgba(253, 224, 71, 0.9))
+      filter: drop-shadow(0 0 14px rgba(253, 224, 71, 0.9))
         drop-shadow(0 0 28px rgba(251, 191, 36, 0.7));
     }
 
     30% {
       opacity: 1;
       transform: scale(1.03) rotate(0deg);
-      filter:
-        drop-shadow(0 0 20px rgba(253, 224, 71, 1))
+      filter: drop-shadow(0 0 20px rgba(253, 224, 71, 1))
         drop-shadow(0 0 38px rgba(251, 191, 36, 0.85));
     }
 
     55% {
       opacity: 1;
       transform: scale(1.07) rotate(1deg);
-      filter:
-        drop-shadow(0 0 32px rgba(253, 224, 71, 1))
+      filter: drop-shadow(0 0 32px rgba(253, 224, 71, 1))
         drop-shadow(0 0 52px rgba(251, 191, 36, 0.95));
     }
 
     78% {
       opacity: 1;
       transform: scale(1.02) rotate(0deg);
-      filter:
-        drop-shadow(0 0 24px rgba(253, 224, 71, 1))
+      filter: drop-shadow(0 0 24px rgba(253, 224, 71, 1))
         drop-shadow(0 0 44px rgba(251, 191, 36, 0.9));
     }
   }
