@@ -29,7 +29,7 @@ const {
 
 <article class:list={["relative", className]}>
   <img
-    class="h-118 w-full object-cover"
+    class="h-170 w-full object-cover"
     src={srcImage}
     alt="Imagen de batería"
   />
@@ -37,18 +37,15 @@ const {
   <div
     class:list={[
       "absolute",
-      "left-0",
       "top-1/2",
+      "left-1/2",
       "-translate-y-1/2",
-      "flex",
-      "flex-col",
+      "-translate-x-1/2",
       "text-white",
-      "text-left",
-      "px-24",
-      "w-[55%]",
       "hover:scale-105",
       "transition-transform",
       "duration-150",
+      "text-center"
     ]}
   >
     <h2
@@ -62,7 +59,7 @@ const {
       {h2Title}
     </h2>
     <h3 class:list={["text-xs", "ml-1"]}>{description}</h3>
-    <div class="flex flex-row gap-5 mt-6">
+    <div class="flex flex-row  justify-center gap-4 mt-6">
       <Button href={hrefButton1} text={textButton1} isGhost={true} />
       <Button href={hrefButton2} text={textButton2} isGhost={false} />
     </div>
