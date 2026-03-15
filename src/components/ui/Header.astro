@@ -5,51 +5,73 @@ interface Props {
   description: string;
 }
 
-const { h1Title, h2Title, description } = Astro.props as Props;
+const { h1Title, description } = Astro.props as Props;
 ---
 
 <header
   class:list={[
+    "relative",
+    "overflow-hidden",
     "flex",
-    "flex-row",
+    "flex-col",
+    "md:flex-row",
     "items-center",
-    "justify-between",
+    "justify-center",
+    "md:justify-between",
+    "gap-4",
+    "md:gap-8",
     "w-full",
+    "px-4",
+    "py-6",
+    "md:px-8",
     "bg-gradient-to-br",
-    "from-[#07702b]",
-    "via-[#022E0B]",
-    "to-[#054b3c]",
-    "backdrop-brightness-80",
+    "from-[#052714]",
+    "via-[#031d0f]",
+    "to-[#041a15]",
   ]}
 >
+  <div class="pointer-events-none absolute -top-16 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-emerald-300/15 blur-3xl"></div>
+
   <img
     src="/logo.png"
     alt="Logo"
-    class:list={["w-40", "h-40", "md:w-52", "md:h-52"]}
+    class:list={["order-2", "md:order-1", "relative", "z-10", "w-28", "h-28", "sm:w-36", "sm:h-36", "md:w-44", "md:h-44"]}
   />
 
   <h3
     class:list={[
+      "order-1",
+      "md:order-2",
+      "relative",
+      "z-10",
       "text-white",
-      "border-2",
-      "border-amber-200",
+      "border",
+      "border-emerald-200/45",
+      "bg-white/8",
+      "backdrop-blur-sm",
       "rounded-2xl",
-      "p-2",
-      "ml-46",
+      "px-4",
+      "py-2",
+      "text-xs",
+      "sm:text-sm",
+      "md:text-base",
+      "max-w-xs",
       "hover:scale-105",
       "duration-200",
-      "text-center"
+      "text-center",
+      "uppercase",
+      "tracking-wide"
     ]}
   >
     {description}
   </h3>
 
-  <div class="flex flex-col items-center">
+  <div class="order-3 md:order-3 relative z-10 flex flex-col items-center text-center md:text-left md:items-end">
     <h1
-      class="inline-flex items-end text-3xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-md"
+      class="inline-flex items-end text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-md"
     >
       <span>{h1Title}</span>
-      <span class="inline-flex w-22 h-22 text-amber-300 lightning-wrap">
+      <span class="inline-flex w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 text-amber-300 lightning-wrap">
         <svg
           class="h-full w-full lightning-bolt"
           viewBox="0 0 24 24"
@@ -61,7 +83,6 @@ const { h1Title, h2Title, description } = Astro.props as Props;
         </svg>
       </span>
     </h1>
-    <h2 class="mt-1 text-sm md:text-xl text-white/90 mr-8">{h2Title}</h2>
   </div>
 </header>
 
