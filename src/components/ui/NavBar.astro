@@ -5,9 +5,25 @@ interface Props {
   option3: string;
   option4: string;
   option5: string;
+  href1?: string;
+  href2?: string;
+  href3?: string;
+  href4?: string;
+  href5?: string;
 }
 
-const { option1, option2, option3, option4, option5 } = Astro.props as Props;
+const {
+  option1,
+  option2,
+  option3,
+  option4,
+  option5,
+  href1 = "#",
+  href2 = "#",
+  href3 = "#",
+  href4 = "#",
+  href5 = "#",
+} = Astro.props as Props;
 ---
 
 <nav>
@@ -28,31 +44,31 @@ const { option1, option2, option3, option4, option5 } = Astro.props as Props;
     ]}
   >
     <li class="relative group">
-      <a href="#" class="transition duration-300 group-hover:text-green-700">
+      <a href={href1} class="transition duration-300 group-hover:text-green-700">
         {option1}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     <li class="relative group">
-      <a href="#" class="transition duration-300 group-hover:text-green-700">
+      <a href={href2} class="transition duration-300 group-hover:text-green-700">
         {option2}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     <li class="relative group">
-      <a href="#" class="transition duration-300 group-hover:text-green-700">
+      <a href={href3} class="transition duration-300 group-hover:text-green-700">
         {option3}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     <li class="relative group">
-      <a href="#" class="transition duration-300 group-hover:text-green-700">
+      <a href={href4} class="transition duration-300 group-hover:text-green-700">
         {option4}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     <li class="relative group">
-      <a href="#" class="transition duration-300 group-hover:text-green-700">
+      <a href={href5} class="transition duration-300 group-hover:text-green-700">
         {option5}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
