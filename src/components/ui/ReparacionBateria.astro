@@ -11,7 +11,6 @@ interface Props {
   textButton2: string;
   hrefButton1: string;
   hrefButton2: string;
-
 }
 
 const {
@@ -34,6 +33,9 @@ const {
     alt="Imagen de batería"
   />
 
+  <div class:list={["absolute", "inset-0", "bg-black/50"]}>
+
+  </div>
   <div
     class:list={[
       "absolute",
@@ -45,7 +47,8 @@ const {
       "hover:scale-105",
       "transition-transform",
       "duration-150",
-      "text-center"
+      "text-center",
+      "z-10"
     ]}
   >
     <h2
