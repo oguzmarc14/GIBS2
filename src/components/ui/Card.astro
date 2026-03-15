@@ -3,58 +3,65 @@ interface Props {
   h2Text: string;
   description: string;
   srcImage: string;
+  srcDireccion: string;
 }
 
-const { h2Text, description, srcImage } = Astro.props as Props;
+const { h2Text, description, srcImage, srcDireccion } = Astro.props as Props;
 ---
 
-<article class:list={["relative"]}>
+<article class:list={["relative", "h-full", "group"]}>
   <div
     class:list={[
-      "bg-gradient-to-br",
-      "from-green-900",
-      "via-green-800",
-      "to-green-700",
-      "w-80",
-      "h-120",
-      "p-6",
+      "flex",
+      "flex-col",
+      "h-full",
+      "bg-white/6",
+      "backdrop-blur-sm",
+      "w-full",
+      "min-h-[31rem]",
+      "p-7",
       "rounded-2xl",
-      "border-2",
-      "border-green-950",
+      "border",
+      "border-emerald-200/20",
+      "shadow-[0_16px_35px_rgba(0,0,0,0.35)]",
       "relative",
+      "transition-transform",
+      "duration-300",
+      "group-hover:-translate-y-1",
     ]}
   >
-    <!-- Botón arriba a la derecha -->
-    <a
-      href="/services"
-      class:list={[
-        "absolute",
-        "top-3",
-        "right-3",
-        "bg-white",
-        "text-green-900",
-        "text-sm",
-        "px-3",
-        "py-1",
-        "rounded-full",
-        "shadow-md",
-        "hover:bg-green-100",
-        "transition",
-        "duration-200",
-        "font-semibold",
-      ]}
-    >
-      Ver más
-    </a>
-
-    <h2 class:list={["mb-3", "text-xl", "text-white"]}>{h2Text}</h2>
-    <p class:list={["text-white"]}>{description}</p>
-    <div>
+    <h2 class:list={["mb-3", "text-2xl", "text-white", "font-bold", "leading-snug"]}>{h2Text}</h2>
+    <p class:list={["text-emerald-50/90", "leading-relaxed", "text-sm", "md:text-base"]}>{description}</p>
+    <div class="mt-6 overflow-hidden rounded-2xl border border-white/15">
       <img
         src={srcImage}
-        alt=""
-        class:list={["rounded-3xl", "mt-8"]}
+        alt={h2Text}
+        class:list={["h-44", "w-full", "object-cover", "transition-transform", "duration-500", "group-hover:scale-105"]}
       />
     </div>
+    <a
+      href={srcDireccion}
+      class:list={[
+        "inline-flex",
+        "items-center",
+        "justify-center",
+        "mx-auto",
+        "mt-auto",
+        "pt-6",
+        "px-6",
+        "py-2.5",
+        "rounded-full",
+        "bg-white",
+        "text-green-900",
+        "font-semibold",
+        "tracking-wide",
+        "shadow-md",
+        "hover:bg-emerald-100",
+        "transition",
+        "duration-200",
+      ]}
+    >
+      Ver mas
+    </a>
   </div>
 </article>
