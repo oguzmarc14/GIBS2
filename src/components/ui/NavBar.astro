@@ -4,11 +4,11 @@ interface Props {
   option2: string;
   option3: string;
   option4: string;
-  option5: string;
-  href1?: string;
-  href2?: string;
-  href3?: string;
-  href4?: string;
+  option5?: string;
+  href1: string;
+  href2: string;
+  href3: string;
+  href4: string;
   href5?: string;
 }
 
@@ -18,11 +18,11 @@ const {
   option3,
   option4,
   option5,
-  href1 = "#",
-  href2 = "#",
-  href3 = "#",
-  href4 = "#",
-  href5 = "#",
+  href1,
+  href2,
+  href3,
+  href4,
+  href5,
 } = Astro.props as Props;
 ---
 
@@ -33,46 +33,59 @@ const {
       "justify-center",
       "items-center",
       "w-full",
-      "gap-10",                       
+      "gap-2",
+      "sm:gap-4",
+      "md:gap-10",
       "bg-white",
       "font-semibold",
       "text-green-900",
       "shadow-md",
-      "h-16",                         
-      "text-lg",                      
-      "tracking-wide"
+      "min-h-16",
+      "py-3",
+      "sm:py-4",
+      "md:py-0",
+      "md:h-16",
+      "px-2",
+      "sm:px-4",
+      "text-xs",
+      "sm:text-sm",
+      "md:text-base",
+      "tracking-wide",
+      "h-auto"
     ]}
   >
-    <li class="relative group">
+    <li class="relative group pl-2 sm:pl-4 md:pl-5 pr-2 sm:pr-4 md:pr-5 border-l border-r border-green-800">
       <a href={href1} class="transition duration-300 group-hover:text-green-700">
         {option1}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
-    <li class="relative group">
+    <li class="relative group pl-2 sm:pl-4 md:pl-5 pr-2 sm:pr-4 md:pr-5 border-l border-r border-green-800">
       <a href={href2} class="transition duration-300 group-hover:text-green-700">
         {option2}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
-    <li class="relative group">
+    <li class="relative group pl-2 sm:pl-4 md:pl-5 pr-2 sm:pr-4 md:pr-5 border-l border-r border-green-800">
       <a href={href3} class="transition duration-300 group-hover:text-green-700">
         {option3}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
-    <li class="relative group">
+    <li class="relative group pl-2 sm:pl-4 md:pl-5 pr-2 sm:pr-4 md:pr-5 border-l border-r border-green-800">
       <a href={href4} class="transition duration-300 group-hover:text-green-700">
         {option4}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
-    <li class="relative group">
+    {option5 && (
+    <li class="relative group pl-2 sm:pl-4 md:pl-5 border-l border-green-300">
       <a href={href5} class="transition duration-300 group-hover:text-green-700">
         {option5}
         <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
+    )}
   </ul>
 </nav>
 

@@ -1,7 +1,6 @@
 ---
 interface Props {
   h1Title: string;
-  h2Title: string;
   description: string;
 }
 
@@ -32,16 +31,33 @@ const { h1Title, description } = Astro.props as Props;
 >
   <div class="pointer-events-none absolute -top-16 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-emerald-300/15 blur-3xl"></div>
 
-  <img
-    src="/logo.png"
-    alt="Logo"
-    class:list={["order-2", "md:order-1", "relative", "z-10", "w-28", "h-28", "sm:w-36", "sm:h-36", "md:w-44", "md:h-44"]}
-  />
+  <!-- Mobile: Logo and Title Row -->
+  <div class="flex md:hidden w-full items-center justify-between gap-4 relative z-10">
+    <img
+      src="/logo.png"
+      alt="Logo"
+      class="w-20 h-20 sm:w-24 sm:h-24"
+    />
+    <h1 class="inline-flex items-end text-2xl sm:text-3xl font-extrabold text-white leading-tight drop-shadow-md">
+      <span>{h1Title}</span>
+      <span class="inline-flex w-10 h-10 sm:w-14 sm:h-14 text-amber-300 lightning-wrap">
+        <svg
+          class="h-full w-full lightning-bolt"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M13.2 1 5.6 13h4.8L8.8 23 18.4 9h-4.7L13.2 1Z"
+            fill="currentColor"></path>
+        </svg>
+      </span>
+    </h1>
+  </div>
 
+  <!-- Mobile: Description Row -->
   <h3
     class:list={[
-      "order-1",
-      "md:order-2",
+      "md:hidden",
       "relative",
       "z-10",
       "text-white",
@@ -54,7 +70,6 @@ const { h1Title, description } = Astro.props as Props;
       "py-2",
       "text-xs",
       "sm:text-sm",
-      "md:text-base",
       "max-w-xs",
       "hover:scale-105",
       "duration-200",
@@ -66,12 +81,45 @@ const { h1Title, description } = Astro.props as Props;
     {description}
   </h3>
 
-  <div class="order-3 md:order-3 relative z-10 flex flex-col items-center text-center md:text-left md:items-end">
+  <!-- Desktop Layout -->
+  <img
+    src="/logo.png"
+    alt="Logo"
+    class:list={["hidden", "md:block", "relative", "z-10", "w-44", "h-44"]}
+  />
+
+  <h3
+    class:list={[
+      "hidden",
+      "md:block",
+      "relative",
+      "z-10",
+      "text-white",
+      "border",
+      "border-emerald-200/45",
+      "bg-white/8",
+      "backdrop-blur-sm",
+      "rounded-2xl",
+      "px-4",
+      "py-2",
+      "text-base",
+      "max-w-xs",
+      "hover:scale-105",
+      "duration-200",
+      "text-center",
+      "uppercase",
+      "tracking-wide"
+    ]}
+  >
+    {description}
+  </h3>
+
+  <div class="hidden md:flex relative z-10 flex-col items-center text-center md:text-left md:items-end">
     <h1
-      class="inline-flex items-end text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-md"
+      class="inline-flex items-end text-6xl font-extrabold text-white leading-tight drop-shadow-md"
     >
       <span>{h1Title}</span>
-      <span class="inline-flex w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 text-amber-300 lightning-wrap">
+      <span class="inline-flex w-22 h-22 text-amber-300 lightning-wrap">
         <svg
           class="h-full w-full lightning-bolt"
           viewBox="0 0 24 24"
