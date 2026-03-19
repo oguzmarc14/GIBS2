@@ -11,115 +11,94 @@ const { h1Title, description } = Astro.props as Props;
   class:list={[
     "relative",
     "overflow-hidden",
-    "flex",
-    "flex-col",
-    "md:flex-row",
-    "items-center",
-    "justify-center",
-    "md:justify-between",
-    "gap-4",
-    "md:gap-8",
     "w-full",
     "px-4",
     "py-6",
     "md:px-8",
-    "bg-gradient-to-br",
-    "from-[#052714]",
-    "via-[#031d0f]",
-    "to-[#041a15]",
+    "bg-gradient-to-b",
+    "from-green-950",
+    "via-green-900",
+    "to-green-950",
+    "border",
+    "backdrop-blur-xl",
+    "shadow-[0_16px_40px_rgba(12,74,47,0.28)]",
   ]}
 >
-  <div class="pointer-events-none absolute -top-16 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-emerald-300/15 blur-3xl"></div>
+  <div
+    class="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-200/35 blur-3xl"
+  >
+  </div>
 
-  <!-- Mobile: Logo and Title Row -->
-  <div class="flex md:hidden w-full items-center justify-between gap-4 relative z-10">
+  <div
+    class="relative z-10 grid w-full grid-cols-[auto_1fr_auto] items-center justify-items-center gap-2 sm:gap-4 md:gap-6"
+  >
     <img
       src="/logo.png"
       alt="Logo"
-      class="w-20 h-20 sm:w-24 sm:h-24"
+      class:list={[
+        "justify-self-start",
+        "sm:w-24",
+        "sm:h-24",
+        "md:w-28",
+        "md:h-28",
+        "lg:w-32",
+        "lg:h-32",
+        "w-20",
+        "h-20",
+        "xl:h-32",
+        "hover:scale-110",
+        "duration-300",
+      ]}
     />
-    <h1 class="inline-flex items-end text-2xl sm:text-3xl font-extrabold text-white leading-tight drop-shadow-md">
-      <span>{h1Title}</span>
-      <span class="inline-flex w-10 h-10 sm:w-14 sm:h-14 text-amber-300 lightning-wrap">
-        <svg
-          class="h-full w-full lightning-bolt"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M13.2 1 5.6 13h4.8L8.8 23 18.4 9h-4.7L13.2 1Z"
-            fill="currentColor"></path>
-        </svg>
-      </span>
-    </h1>
-  </div>
 
-  <!-- Mobile: Description Row -->
-  <h3
-    class:list={[
-      "md:hidden",
-      "relative",
-      "z-10",
-      "text-white",
-      "border",
-      "border-emerald-200/45",
-      "bg-white/8",
-      "backdrop-blur-sm",
-      "rounded-2xl",
-      "px-4",
-      "py-2",
-      "text-xs",
-      "sm:text-sm",
-      "max-w-xs",
-      "hover:scale-105",
-      "duration-200",
-      "text-center",
-      "uppercase",
-      "tracking-wide"
-    ]}
-  >
-    {description}
-  </h3>
+    <div class:list={["w-full"]}>
+      <div
+        class:list={["relative", "z-20", "mb-4", "mx-auto", "w-5/7"]}
+      >
+        <slot />
+      </div>
+      <h3
+      class:list={[
+        "text-white",
+        "border",
+        "border-green-200",
+        "bg-green-900/25",
+        "backdrop-blur-sm",
+        "rounded-2xl",
+        "px-2",
+        "mt-8",
+        "sm:px-2",
+        "py-1.5",
+        "text-[10px]",
+        "sm:text-sm",
+        "md:text-base",
+        "lg:text-sm",
+        "w-fit",
+        "max-w-[13rem]",
+        "sm:max-w-xs",
+        "md:max-w-md",
+        "lg:max-w-sm",
+        "text-center",
+        "uppercase",
+        "tracking-wide",
+        "leading-tight",
+        "justify-self-center",
+        "hover:shadow-2xl",
+        "hover:shadow-amber-200",
+        "hover:duration-300"
+      ]}
+    >
+      {description}
+    </h3>
+    </div>
 
-  <!-- Desktop Layout -->
-  <img
-    src="/logo.png"
-    alt="Logo"
-    class:list={["hidden", "md:block", "relative", "z-10", "w-44", "h-44"]}
-  />
-
-  <h3
-    class:list={[
-      "hidden",
-      "md:block",
-      "relative",
-      "z-10",
-      "text-white",
-      "border",
-      "border-emerald-200/45",
-      "bg-white/8",
-      "backdrop-blur-sm",
-      "rounded-2xl",
-      "px-4",
-      "py-2",
-      "text-base",
-      "max-w-xs",
-      "hover:scale-105",
-      "duration-200",
-      "text-center",
-      "uppercase",
-      "tracking-wide"
-    ]}
-  >
-    {description}
-  </h3>
-
-  <div class="hidden md:flex relative z-10 flex-col items-center text-center md:text-left md:items-end">
     <h1
-      class="inline-flex items-end text-6xl font-extrabold text-white leading-tight drop-shadow-md"
+      class="inline-flex hover:scale-110 duration-300 items-end justify-self-center xl:justify-self-end xl:translate-x-1 2xl:translate-x-2 text-2xl min-[500px]:text-[2.6rem] min-[980px]:text-[3.2rem] min-[1201px]:text-[3.5rem] min-[1536px]:text-[4rem] font-extrabold text-white leading-tight drop-shadow-md"
     >
       <span>{h1Title}</span>
-      <span class="inline-flex w-22 h-22 text-amber-300 lightning-wrap">
+      <span
+        class="inline-flex -translate-y-1 min-[980px]:-translate-y-1.5 w-8 h-8 min-[500px]:w-11 min-[500px]:h-11 min-[980px]:w-12 min-[980px]:h-12 min-[1201px]:w-14 min-[1201px]:h-14 min-[1536px]:w-16 min-[1536px]:h-16 text-amber-300 lightning-wrap"
+      >
         <svg
           class="h-full w-full lightning-bolt"
           viewBox="0 0 24 24"

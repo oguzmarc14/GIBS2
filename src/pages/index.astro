@@ -6,22 +6,25 @@ import Footer from "../components/ui/Footer.astro";
 import Cards from "../components/sections/Cards.astro";
 import ReparacionesBaterias from "../components/sections/ReparacionesBaterias.astro";
 import Ubicacion from "../components/sections/Ubicacion.astro";
+import Recomendacion from "../components/sections/Recomendacion.astro";
 ---
 
 <Layout>
-  <Header h1Title="GIBS" description="Industrial Battery Service" />
-  <NavBar
-    option1="Home"
-    option2="Services"
-    option3="Chargers"
-    option4="About GIBS"
-    href1="/"
-    href2="/services"
-    href3="/chargers"
-    href4="/contacto"
-  />
+  <Header h1Title="GIBS" description="Industrial Battery Service">
+    <NavBar
+      option1="Home"
+      option2="Services"
+      option3="Chargers"
+      option4="Contact us"
+      href1="/"
+      href2="/services"
+      href3="/chargers"
+      href4="/contacto"
+    />
+  </Header>
   <ReparacionesBaterias />
   <Cards id="services" />
+  <Recomendacion />
   <Ubicacion id="ubicacion" />
   <Footer companyName="GIBS" />
 </Layout>

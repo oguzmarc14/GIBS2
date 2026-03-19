@@ -3,21 +3,36 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/ui/Header.astro";
 import Footer from "../components/ui/Footer.astro";
 import NavBar from "../components/ui/NavBar.astro";
+import CardsService from "../components/sections/CardsService.astro";
 ---
 
 <Layout>
   <Header
     h1Title="GIBS"
     description="Industrial battery service"
-  />
-  <NavBar
-    option1="Home"
-    option2="Services"
-    option3="Chargers"
-    option4="About GIBS"
-    option5="Contact Us"
-    href1="/"
-    href2="#services"
-    href3=""
-    href4=""  />
+  >
+    <NavBar
+      option1="Home"
+      option2="Services"
+      option3="Chargers"
+      option4="Contact Us"
+      href1="/"
+      href2="/services"
+      href3="/chargers"
+      href4="/contacto"
+    />
+  </Header>
+   
+<section id="services" class:list={["relative", "overflow-hidden", "bg-gradient-to-b", "from-[#0b3b22]", "via-[#145a35]", "to-[#0b3b22]"]}>
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-white mb-12">Our Services</h2>
+      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <CardsService />
+      </div>
+    </div>
+  </section>
+
   <Footer companyName="GIBS" />
+</Layout>
+
+

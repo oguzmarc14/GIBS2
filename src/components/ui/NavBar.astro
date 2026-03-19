@@ -32,57 +32,58 @@ const {
       "flex",
       "justify-center",
       "items-center",
-      "w-full",
-      "gap-2",
-      "sm:gap-4",
-      "md:gap-10",
-      "bg-white",
-      "font-semibold",
-      "text-green-900",
-      "shadow-md",
-      "min-h-16",
-      "py-3",
-      "sm:py-4",
-      "md:py-0",
-      "md:h-16",
+      "sm:w-6/9",
+      "w-6/7",
+      "mx-auto",
+      "gap-1",
+      "py-2",
       "px-2",
-      "sm:px-4",
-      "text-xs",
-      "sm:text-sm",
-      "md:text-base",
-      "tracking-wide",
-      "h-auto"
+      "rounded-full",
+      "border",
+      "border-green-200/70",
+      "bg-black/25",
+      "backdrop-blur-md",
+      "shadow-[0_8px_22px_rgba(15,60,35,0.2)]",
+      "overflow-x-auto",
+      "whitespace-nowrap",
+      "[scrollbar-width:none]",
+      "[-ms-overflow-style:none]",
+      "[&::-webkit-scrollbar]:hidden",
+      "hover:bg-green-900/40",
+      "hover:scale-105",
+      "duration-300"
+
     ]}
   >
-    <li class="relative group pl-2 sm:pl-4 md:pl-5 pr-2 sm:pr-4 md:pr-5 border-l border-r border-green-800">
-      <a href={href1} class="transition duration-300 group-hover:text-green-700">
+    <li class="relative group px-2 border-l border-r border-green-200/80">
+      <a href={href1} class="text-base font-semibold text-white transition duration-300 group-hover:text-green-950">
         {option1}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
-    <li class="relative group pl-2 sm:pl-4 md:pl-5 pr-2 sm:pr-4 md:pr-5 border-l border-r border-green-800">
-      <a href={href2} class="transition duration-300 group-hover:text-green-700">
+    <li class="relative group px-2 border-l border-r border-green-200/80">
+      <a href={href2} class="text-base font-semibold text-white transition duration-300 group-hover:text-green-950">
         {option2}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
-    <li class="relative group pl-2 sm:pl-4 md:pl-5 pr-2 sm:pr-4 md:pr-5 border-l border-r border-green-800">
-      <a href={href3} class="transition duration-300 group-hover:text-green-700">
+    <li class="relative group px-2 border-l border-r border-green-200/80">
+      <a href={href3} class="text-base font-semibold text-white transition duration-300 group-hover:text-green-950">
         {option3}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
-    <li class="relative group pl-2 sm:pl-4 md:pl-5 pr-2 sm:pr-4 md:pr-5 border-l border-r border-green-800">
-      <a href={href4} class="transition duration-300 group-hover:text-green-700">
+    <li class="relative group px-2 border-l border-r border-green-200/80">
+      <a href={href4} class="text-base font-semibold text-white transition duration-300 group-hover:text-green-950">
         {option4}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     {option5 && (
-    <li class="relative group pl-2 sm:pl-4 md:pl-5 border-l border-green-300">
-      <a href={href5} class="transition duration-300 group-hover:text-green-700">
+    <li class="relative group px-2 border-l border-green-200/80">
+      <a href={href5} class="text-base font-semibold text-whites transition duration-300 group-hover:text-green-700">
         {option5}
-        <span class="block h-0.5 w-0 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
       </a>
     </li>
     )}
