@@ -46,13 +46,27 @@ const services = [
 ];
 ---
 
-{services.map((service) => (
-  <CardService
-    titulo={service.titulo}
-    descripcion={service.descripcion}
-    imgSrc={service.imgSrc}
-    imgAlt={service.imgAlt}
-    ctaText="I'm interested in this service"
-    whatsappMessagePrefix="I'm interested in this service"
-  />
-))}
+{services.map((service, index) => {
+  const isLastCard = index === services.length - 1;
+  const centerLastInMd = services.length % 2 === 1 && isLastCard;
+  const centerLastInXl = services.length % 3 === 1 && isLastCard;
+
+  return (
+    <div
+      class:list={[
+        "w-full",
+        centerLastInMd && "md:col-span-2 md:justify-self-center",
+        centerLastInXl && "xl:col-span-1 xl:col-start-2",
+      ]}
+    >
+      <CardService
+        titulo={service.titulo}
+        descripcion={service.descripcion}
+        imgSrc={service.imgSrc}
+        imgAlt={service.imgAlt}
+        ctaText="I'm interested in this service"
+        whatsappMessagePrefix="I'm interested in this service"
+      />
+    </div>
+  );
+})}

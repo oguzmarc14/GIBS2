@@ -1,0 +1,245 @@
+---
+import CardBaterias from "../ui/CardBaterias.astro";
+
+interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: className = "", id } = Astro.props as Props;
+
+const baterias = [
+  { titulo: "PBM 12 Volt 80 Amp Charger", modelo: "30-108", voltaje: "12V", amperaje: "80A", rangoAh: "400 - 500" },
+  { titulo: "PBM 12 Volt 100 Amp Charger", modelo: "30-112", voltaje: "12V", amperaje: "100A", rangoAh: "500 - 700" },
+
+  { titulo: "PBM 24 Volt 60 Amp Charger", modelo: "30-145", voltaje: "24V", amperaje: "60A", rangoAh: "300 - 420" },
+  { titulo: "PBM 24 Volt 80 Amp Charger", modelo: "30-149", voltaje: "24V", amperaje: "80A", rangoAh: "400 - 560" },
+  { titulo: "PBM 24 Volt 100 Amp Charger", modelo: "30-153", voltaje: "24V", amperaje: "100A", rangoAh: "500 - 700" },
+  { titulo: "PBM 24 Volt 120 Amp Charger", modelo: "30-157", voltaje: "24V", amperaje: "120A", rangoAh: "600 - 840" },
+  { titulo: "PBM 24 Volt 160 Amp Charger", modelo: "30-165", voltaje: "24V", amperaje: "160A", rangoAh: "800 - 1120" },
+
+  { titulo: "PBM 36 Volt 60 Amp Charger", modelo: "30-186", voltaje: "36V", amperaje: "60A", rangoAh: "300 - 420" },
+  { titulo: "PBM 36 Volt 100 Amp Charger", modelo: "30-194", voltaje: "36V", amperaje: "100A", rangoAh: "500 - 700" },
+  { titulo: "PBM 36 Volt 120 Amp Charger", modelo: "30-198", voltaje: "36V", amperaje: "120A", rangoAh: "600 - 840" },
+  { titulo: "PBM 36 Volt 140 Amp Charger", modelo: "30-202", voltaje: "36V", amperaje: "140A", rangoAh: "700 - 980" },
+  { titulo: "PBM 36 Volt 160 Amp Charger", modelo: "30-206", voltaje: "36V", amperaje: "160A", rangoAh: "800 - 1120" },
+
+  { titulo: "PBM 48 Volt 50 Amp Charger", modelo: "30-226", voltaje: "48V", amperaje: "50A", rangoAh: "250 - 350" },
+  { titulo: "PBM 48 Volt 80 Amp Charger", modelo: "30-231", voltaje: "48V", amperaje: "80A", rangoAh: "400 - 560" },
+  { titulo: "PBM 48 Volt 100 Amp Charger", modelo: "30-235", voltaje: "48V", amperaje: "100A", rangoAh: "500 - 700" },
+  { titulo: "PBM 48 Volt 120 Amp Charger", modelo: "30-239", voltaje: "48V", amperaje: "120A", rangoAh: "600 - 840" },
+
+  { titulo: "PBM 72 Volt 80 Amp Charger", modelo: "30-272", voltaje: "72V", amperaje: "80A", rangoAh: "400 - 560" },
+  { titulo: "PBM 72 Volt 100 Amp Charger", modelo: "30-276", voltaje: "72V", amperaje: "100A", rangoAh: "500 - 700" },
+];
+---
+
+<section
+  id={id}
+  class:list={[
+    "relative",
+    "overflow-hidden",
+    "w-full",
+    "bg-gradient-to-b",
+    "from-[#0b3b22]",
+    "via-[#145a35]",
+    "to-[#0b3b22]",
+    className,
+  ]}
+>
+  <div
+    class:list={[
+      "pointer-events-none",
+      "absolute",
+      "-top-24",
+      "left-1/2",
+      "h-72",
+      "w-72",
+      "-translate-x-1/2",
+      "rounded-full",
+      "bg-emerald-400/20",
+      "blur-3xl",
+    ]}
+  ></div>
+
+  <div
+    class:list={[
+      "relative",
+      "z-10",
+      "mx-auto",
+      "max-w-7xl",
+      "px-4",
+      "py-12",
+      "sm:px-6",
+      "sm:py-16",
+      "md:py-20",
+    ]}
+  >
+    <div class:list={["text-center", "mb-10", "sm:mb-14"]}>
+      <p
+        class:list={[
+          "mb-4",
+          "text-sm",
+          "font-semibold",
+          "tracking-[0.28em]",
+          "text-emerald-200",
+          "uppercase",
+        ]}
+      >
+        Professional Support
+      </p>
+      <h2
+        class:list={[
+          "text-2xl",
+          "font-bold",
+          "text-white",
+          "mb-5",
+          "leading-tight",
+          "sm:text-3xl",
+          "sm:mb-6",
+          "md:text-5xl",
+          "lg:text-6xl",
+        ]}
+      >
+        Industrial battery services designed for uptime
+      </h2>
+      <p
+        class:list={[
+          "text-sm",
+          "text-emerald-100/90",
+          "max-w-4xl",
+          "font-serif",
+          "mx-auto",
+          "sm:text-base",
+          "md:text-lg",
+        ]}
+      >
+        From diagnostics and repair to maintenance and charger support, our
+        team keeps your fleet reliable, safe, and ready for daily operations.
+      </p>
+    </div>
+
+    <div
+      class:list={[
+        "mx-auto",
+        "mb-10",
+        "max-w-5xl",
+        "rounded-2xl",
+        "border",
+        "border-emerald-200/20",
+        "bg-white/6",
+        "p-5",
+        "text-emerald-50/90",
+        "backdrop-blur-sm",
+        "shadow-[0_16px_35px_rgba(0,0,0,0.25)]",
+        "sm:mb-12",
+        "sm:p-7",
+      ]}
+    >
+      <p class:list={["text-sm", "leading-relaxed", "sm:text-base", "md:text-lg"]}>
+        Green Industrial Battery Service (GIBS) is a trusted partner for
+        industrial battery repair, forklift battery maintenance, charger
+        diagnostics, and preventive battery service programs. Our technicians
+        help warehouses and material handling operations reduce downtime,
+        improve battery life, and maintain safe charging environments.
+      </p>
+      <p
+        class:list={[
+          "mt-4",
+          "text-sm",
+          "leading-relaxed",
+          "sm:text-base",
+          "md:text-lg",
+        ]}
+      >
+        We provide complete battery and charger support, including battery
+        replacement, acid adjustment, cleaning and neutralization, watering
+        system service, charging station inspections, and emergency charger
+        repair. Whether your operation needs one-time service or scheduled
+        industrial battery maintenance, GIBS delivers reliable, cost-effective
+        solutions built for long-term performance.
+      </p>
+    </div>
+
+    <div class:list={["mx-auto", "max-w-5xl", "mb-12", "sm:mb-16", "md:mb-20"]}>
+      <p
+        class:list={[
+          "text-center",
+          "text-sm",
+          "text-emerald-100/90",
+          "leading-relaxed",
+          "sm:text-base",
+          "md:text-lg",
+        ]}
+      >
+        We offer industrial battery repair, preventive maintenance, charger
+        diagnostics, and forklift battery support focused on improving uptime,
+        reducing operational failures, and extending the lifespan of your
+        charging systems.
+      </p>
+      <h3
+        class:list={[
+          "mt-5",
+          "text-center",
+          "text-xl",
+          "font-bold",
+          "text-white",
+          "leading-tight",
+          "sm:text-2xl",
+          "md:text-3xl",
+        ]}
+      >
+        These are some of the services we provide
+      </h3>
+      <div
+        class:list={[
+          "mt-6",
+          "h-px",
+          "w-full",
+          "bg-gradient-to-r",
+          "from-transparent",
+          "via-emerald-200/45",
+          "to-transparent",
+          "sm:mt-8",
+        ]}
+      ></div>
+    </div>
+
+    <div
+      class:list={[
+        "grid",
+        "grid-cols-1",
+        "gap-5",
+        "items-stretch",
+        "justify-items-center",
+        "sm:gap-8",
+        "md:grid-cols-2",
+        "xl:grid-cols-3",
+      ]}
+    >
+      {baterias.map((item, index) => {
+        const isLastCard = index === baterias.length - 1;
+        const centerLastInMd = baterias.length % 2 === 1 && isLastCard;
+        const centerLastInXl = baterias.length % 3 === 1 && isLastCard;
+
+        return (
+          <div
+            class:list={[
+              "w-full",
+              centerLastInMd && "md:col-span-2 md:justify-self-center",
+              centerLastInXl && "xl:col-span-1 xl:col-start-2",
+            ]}
+          >
+            <CardBaterias
+              titulo={item.titulo}
+              modelo={item.modelo}
+              voltaje={item.voltaje}
+              amperaje={item.amperaje}
+              rangoAh={item.rangoAh}
+            />
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
