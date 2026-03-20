@@ -2,71 +2,94 @@
 interface Props {
   h1Title: string;
   description: string;
+  theme?: "dark" | "light";
 }
 
-const { h1Title, description } = Astro.props as Props;
+const { h1Title, description, theme = "dark" } = Astro.props as Props;
+const isLight = theme === "light";
 ---
 
 <header
   class:list={[
     "relative",
+    "sticky",
+    "top-0",
+    "z-50",
     "overflow-hidden",
     "w-full",
     "px-4",
-    "py-6",
+    "py-3",
+    "sm:py-5",
     "md:px-8",
     "bg-gradient-to-b",
-    "from-green-950",
-    "via-green-900",
-    "to-green-950",
+    isLight ? "from-white" : "from-[#1b261d]",
+    isLight ? "via-[#f2f0e8]" : "via-[#243225]",
+    isLight ? "to-white" : "to-[#2d261b]",
     "border",
+    isLight ? "border-emerald-900/25" : "border-emerald-200/35",
     "backdrop-blur-xl",
-    "shadow-[0_16px_40px_rgba(12,74,47,0.28)]",
+    isLight ? "shadow-[0_16px_40px_rgba(24,34,22,0.22)]" : "shadow-[0_16px_40px_rgba(8,20,12,0.45)]",
   ]}
 >
   <div
-    class="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-200/35 blur-3xl"
+    class:list={[
+      "pointer-events-none",
+      "absolute",
+      "-top-20",
+      "left-1/2",
+      "h-64",
+      "w-64",
+      "-translate-x-1/2",
+      "rounded-full",
+      "blur-3xl",
+      isLight ? "bg-[#32412f]/20" : "bg-emerald-500/20",
+    ]}
   >
   </div>
 
   <div
-    class="relative z-10 grid w-full grid-cols-[auto_1fr_auto] items-center justify-items-center gap-2 sm:gap-4 md:gap-6"
+    class="relative z-10 grid w-full grid-cols-1 items-center justify-items-center gap-3 sm:gap-4 md:grid-cols-[auto_1fr_auto] md:gap-6"
   >
     <img
       src="/logo.png"
       alt="Logo"
       class:list={[
-        "justify-self-start",
-        "sm:w-24",
-        "sm:h-24",
-        "md:w-28",
-        "md:h-28",
-        "lg:w-32",
-        "lg:h-32",
-        "w-20",
-        "h-20",
-        "xl:h-32",
+        "order-1",
+        "justify-self-center",
+        "md:justify-self-start",
+        "w-16",
+        "h-16",
+        "sm:w-20",
+        "sm:h-20",
+        "md:w-24",
+        "md:h-24",
+        "lg:w-28",
+        "lg:h-28",
+        "xl:h-28",
+        "shrink-0",
         "hover:scale-110",
         "duration-300",
+        "md:ml-0"
       ]}
     />
 
-    <div class:list={["w-full"]}>
+    <div class:list={["order-3", "md:order-2", "w-full", "max-w-4xl"]}>
       <div
-        class:list={["relative", "z-20", "mb-4", "mx-auto", "w-5/7"]}
+        class:list={["relative", "z-20", "mb-3", "md:mb-4", "mx-auto", "w-full", "md:w-full", "xl:w-5/7"]}
       >
         <slot />
       </div>
       <h3
       class:list={[
-        "text-white",
+        isLight ? "text-[#2e3b2b]" : "text-emerald-50",
         "border",
-        "border-green-200",
-        "bg-green-900/25",
+        isLight ? "border-[#32412f]/40" : "border-emerald-200/45",
+        isLight ? "bg-white/75" : "bg-black/25",
         "backdrop-blur-sm",
         "rounded-2xl",
-        "px-2",
-        "mt-8",
+        "px-3",
+        "mt-4",
+        "md:mt-8",
         "sm:px-2",
         "py-1.5",
         "text-[10px]",
@@ -79,12 +102,13 @@ const { h1Title, description } = Astro.props as Props;
         "md:max-w-md",
         "lg:max-w-sm",
         "text-center",
+        "mx-auto",
         "uppercase",
         "tracking-wide",
         "leading-tight",
         "justify-self-center",
         "hover:shadow-2xl",
-        "hover:shadow-amber-200",
+        isLight ? "hover:shadow-[#32412f]/35" : "hover:shadow-emerald-800/70",
         "hover:duration-300"
       ]}
     >
@@ -93,7 +117,29 @@ const { h1Title, description } = Astro.props as Props;
     </div>
 
     <h1
-      class="inline-flex hover:scale-110 duration-300 items-end justify-self-center xl:justify-self-end xl:translate-x-1 2xl:translate-x-2 text-2xl min-[500px]:text-[2.6rem] min-[980px]:text-[3.2rem] min-[1201px]:text-[3.5rem] min-[1536px]:text-[4rem] font-extrabold text-white leading-tight drop-shadow-md"
+      class:list={[
+        "order-2",
+        "md:order-3",
+        "inline-flex",
+        "hover:scale-110",
+        "duration-300",
+        "items-end",
+        "justify-self-center",
+        "md:justify-self-end",
+        "md:translate-x-0",
+        "xl:translate-x-1",
+        "2xl:translate-x-2",
+        "text-[1.8rem]",
+        "min-[500px]:text-[2.2rem]",
+        "min-[980px]:text-[2.7rem]",
+        "min-[1100px]:text-[3.2rem]",
+        "min-[1201px]:text-[3.5rem]",
+        "min-[1536px]:text-[4rem]",
+        "font-extrabold",
+        isLight ? "text-[#32412f]" : "text-emerald-200",
+        "leading-tight",
+        "drop-shadow-md",
+      ]}
     >
       <span>{h1Title}</span>
       <span

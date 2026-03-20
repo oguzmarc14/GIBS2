@@ -10,6 +10,7 @@ interface Props {
   href3: string;
   href4: string;
   href5?: string;
+  theme?: "dark" | "light";
 }
 
 const {
@@ -23,7 +24,10 @@ const {
   href3,
   href4,
   href5,
+  theme = "dark",
 } = Astro.props as Props;
+
+const isLight = theme === "light";
 ---
 
 <nav>
@@ -33,57 +37,71 @@ const {
       "justify-center",
       "items-center",
       "sm:w-6/9",
-      "w-6/7",
+      "min-[770px]:w-11/12",
+      "lg:w-4/5",
+      "min-[1100px]:w-6/9",
+      "w-full",
       "mx-auto",
-      "gap-1",
-      "py-2",
-      "px-2",
+      "gap-0.5",
+      "sm:gap-1",
+      "py-2.5",
+      "px-1.5",
+      "sm:px-2",
       "rounded-full",
       "border",
-      "border-green-200/70",
-      "bg-green-500/25",
+      isLight ? "border-emerald-900/25" : "border-emerald-200/45",
+      "bg-gradient-to-r",
+      isLight ? "from-white/95" : "from-[#223126]/95",
+      isLight ? "via-[#f2f0e8]/90" : "via-[#324133]/92",
+      isLight ? "to-white/95" : "to-[#3f3528]/94",
       "backdrop-blur-md",
-      "shadow-[0_8px_22px_rgba(15,60,35,0.2)]",
+      isLight ? "shadow-[0_8px_22px_rgba(24,34,22,0.2)]" : "shadow-[0_8px_22px_rgba(6,18,10,0.45)]",
       "overflow-x-auto",
       "whitespace-nowrap",
       "[scrollbar-width:none]",
       "[-ms-overflow-style:none]",
       "[&::-webkit-scrollbar]:hidden",
-      "hover:bg-green-900/40",
-      "hover:scale-105",
+      isLight ? "hover:from-[#f6f5ef]/95" : "hover:from-[#27372a]/95",
+      isLight ? "hover:via-white/95" : "hover:via-[#364939]/93",
+      isLight ? "hover:to-[#f0eee4]/95" : "hover:to-[#453b2d]/95",
+      "text-sm",
+      "sm:text-[15px]",
+      "min-[1100px]:text-base",
+      "hover:scale-100",
+      "sm:hover:scale-100",
       "duration-300"
 
     ]}
   >
-    <li class="relative group px-2 border-l border-r border-green-200/80">
-      <a href={href1} class="text-base font-semibold text-white transition duration-300 group-hover:text-green-950">
+    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", "border-r", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
+      <a href={href1} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
         {option1}
-        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
       </a>
     </li>
-    <li class="relative group px-2 border-l border-r border-green-200/80">
-      <a href={href2} class="text-base font-semibold text-white transition duration-300 group-hover:text-green-950">
+    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", "border-r", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
+      <a href={href2} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
         {option2}
-        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
       </a>
     </li>
-    <li class="relative group px-2 border-l border-r border-green-200/80">
-      <a href={href3} class="text-base font-semibold text-white transition duration-300 group-hover:text-green-950">
+    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", "border-r", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
+      <a href={href3} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
         {option3}
-        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
       </a>
     </li>
-    <li class="relative group px-2 border-l border-r border-green-200/80">
-      <a href={href4} class="text-base font-semibold text-white transition duration-300 group-hover:text-green-950">
+    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", "border-r", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
+      <a href={href4} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
         {option4}
-        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
       </a>
     </li>
     {option5 && (
-    <li class="relative group px-2 border-l border-green-200/80">
-      <a href={href5} class="text-base font-semibold text-whites transition duration-300 group-hover:text-green-700">
+    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
+      <a href={href5} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
         {option5}
-        <span class="block h-0.5 w-0 bg-green-800 transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
       </a>
     </li>
     )}

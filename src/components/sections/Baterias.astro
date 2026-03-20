@@ -47,176 +47,23 @@ const baterias = [
     className,
   ]}
 >
-  <div
-    class:list={[
-      "pointer-events-none",
-      "absolute",
-      "-top-24",
-      "left-1/2",
-      "h-72",
-      "w-72",
-      "-translate-x-1/2",
-      "rounded-full",
-      "bg-emerald-400/20",
-      "blur-3xl",
-    ]}
-  ></div>
+  <div class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"></div>
 
-  <div
-    class:list={[
-      "relative",
-      "z-10",
-      "mx-auto",
-      "max-w-7xl",
-      "px-4",
-      "py-12",
-      "sm:px-6",
-      "sm:py-16",
-      "md:py-20",
-    ]}
-  >
-    <div class:list={["text-center", "mb-10", "sm:mb-14"]}>
-      <p
-        class:list={[
-          "mb-4",
-          "text-sm",
-          "font-semibold",
-          "tracking-[0.28em]",
-          "text-emerald-200",
-          "uppercase",
-        ]}
-      >
-        Professional Support
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+    <div class="text-center mb-10 sm:mb-14">
+      <p class="mb-4 text-sm font-semibold tracking-[0.28em] text-emerald-200 uppercase">
+        PBM Chargers Catalog
       </p>
-      <h2
-        class:list={[
-          "text-2xl",
-          "font-bold",
-          "text-white",
-          "mb-5",
-          "leading-tight",
-          "sm:text-3xl",
-          "sm:mb-6",
-          "md:text-5xl",
-          "lg:text-6xl",
-        ]}
-      >
-        Industrial battery services designed for uptime
+      <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-5 sm:mb-6 leading-tight">
+        Baterias y cargadores industriales
       </h2>
-      <p
-        class:list={[
-          "text-sm",
-          "text-emerald-100/90",
-          "max-w-4xl",
-          "font-serif",
-          "mx-auto",
-          "sm:text-base",
-          "md:text-lg",
-        ]}
-      >
-        From diagnostics and repair to maintenance and charger support, our
-        team keeps your fleet reliable, safe, and ready for daily operations.
+      <p class="text-sm sm:text-base md:text-lg text-emerald-100/90 max-w-4xl font-serif mx-auto">
+        Encuentra el modelo PBM ideal por voltaje, amperaje y capacidad de
+        batería para mantener tu operación segura, estable y productiva.
       </p>
     </div>
 
-    <div
-      class:list={[
-        "mx-auto",
-        "mb-10",
-        "max-w-5xl",
-        "rounded-2xl",
-        "border",
-        "border-emerald-200/20",
-        "bg-white/6",
-        "p-5",
-        "text-emerald-50/90",
-        "backdrop-blur-sm",
-        "shadow-[0_16px_35px_rgba(0,0,0,0.25)]",
-        "sm:mb-12",
-        "sm:p-7",
-      ]}
-    >
-      <p class:list={["text-sm", "leading-relaxed", "sm:text-base", "md:text-lg"]}>
-        Green Industrial Battery Service (GIBS) is a trusted partner for
-        industrial battery repair, forklift battery maintenance, charger
-        diagnostics, and preventive battery service programs. Our technicians
-        help warehouses and material handling operations reduce downtime,
-        improve battery life, and maintain safe charging environments.
-      </p>
-      <p
-        class:list={[
-          "mt-4",
-          "text-sm",
-          "leading-relaxed",
-          "sm:text-base",
-          "md:text-lg",
-        ]}
-      >
-        We provide complete battery and charger support, including battery
-        replacement, acid adjustment, cleaning and neutralization, watering
-        system service, charging station inspections, and emergency charger
-        repair. Whether your operation needs one-time service or scheduled
-        industrial battery maintenance, GIBS delivers reliable, cost-effective
-        solutions built for long-term performance.
-      </p>
-    </div>
-
-    <div class:list={["mx-auto", "max-w-5xl", "mb-12", "sm:mb-16", "md:mb-20"]}>
-      <p
-        class:list={[
-          "text-center",
-          "text-sm",
-          "text-emerald-100/90",
-          "leading-relaxed",
-          "sm:text-base",
-          "md:text-lg",
-        ]}
-      >
-        We offer industrial battery repair, preventive maintenance, charger
-        diagnostics, and forklift battery support focused on improving uptime,
-        reducing operational failures, and extending the lifespan of your
-        charging systems.
-      </p>
-      <h3
-        class:list={[
-          "mt-5",
-          "text-center",
-          "text-xl",
-          "font-bold",
-          "text-white",
-          "leading-tight",
-          "sm:text-2xl",
-          "md:text-3xl",
-        ]}
-      >
-        These are some of the services we provide
-      </h3>
-      <div
-        class:list={[
-          "mt-6",
-          "h-px",
-          "w-full",
-          "bg-gradient-to-r",
-          "from-transparent",
-          "via-emerald-200/45",
-          "to-transparent",
-          "sm:mt-8",
-        ]}
-      ></div>
-    </div>
-
-    <div
-      class:list={[
-        "grid",
-        "grid-cols-1",
-        "gap-5",
-        "items-stretch",
-        "justify-items-center",
-        "sm:gap-8",
-        "md:grid-cols-2",
-        "xl:grid-cols-3",
-      ]}
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-8 items-stretch justify-items-center">
       {baterias.map((item, index) => {
         const isLastCard = index === baterias.length - 1;
         const centerLastInMd = baterias.length % 2 === 1 && isLastCard;
