@@ -12,24 +12,24 @@ const { href, isGhost = false, text, class: className = "" } = Astro.props as Pr
 <a
     href={href}
     class:list={[
-    "text-sm", 
-    "font-medium",
+    "text-sm",
+    "font-semibold",
     "w-44",
+    "px-6",
     "py-3",
     "text-center",
     "rounded-xl",
-    "duration-200",
-    "border-2",
-    "group-hover:shadow-lg",
+    "duration-300",
+    "border",
     "mt-4",
+    "transition-all",
     className,
-    isGhost ? "bg-amber-500" : "bg-transparent",
-    isGhost ? 'text-white' : 'text-white',
-    isGhost ? 'border-brown' : 'border-brown',
-    isGhost ? 'hover:bg-orange-700' : 'hover:bg-green-950',
-    isGhost ? 'hover:scale-105' : 'hover:scale-105',
-    isGhost ? 'hover:text-white' : 'hover:text-white',
-    isGhost ? 'hover:border-brown' : 'hover:border-brown',
+    isGhost ? "bg-[#F4B400]" : "bg-white/5",
+    isGhost ? "text-black" : "text-[#E8F5E9]",
+    isGhost ? "border-[#F4B400]" : "border-white/30",
+    isGhost ? "shadow-[0_8px_25px_rgba(244,180,0,0.25)]" : "backdrop-blur-sm",
+    isGhost ? "hover:bg-[#d99d00]" : "hover:bg-white/10",
+    isGhost ? "hover:scale-105" : "hover:scale-105",
   ]}
 >
   {text}

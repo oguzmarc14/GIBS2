@@ -32,6 +32,7 @@ const hrefFinal = hrefCotizar ?? hrefDefault;
 ---
 
 <article
+  data-reveal
   class:list={[
     "relative",
     "group",
@@ -42,31 +43,33 @@ const hrefFinal = hrefCotizar ?? hrefDefault;
     "max-w-[23rem]",
     "rounded-2xl",
     "border",
-    "border-emerald-200/20",
-    "bg-white/6",
+    "border-white/10",
+    "bg-[#145A35]/80",
     "backdrop-blur-sm",
     "p-5",
-    "shadow-[0_16px_35px_rgba(0,0,0,0.35)]",
+    "shadow-[0_10px_30px_rgba(0,0,0,0.18)]",
     "transition-transform",
     "duration-300",
     "group-hover:-translate-y-1",
+    "group-hover:shadow-[0_14px_40px_rgba(0,0,0,0.25)]",
   ]}
 >
   <p
     class:list={[
-      "mb-3",
+      "mb-6",
       "w-fit",
+      "mx-auto",
       "rounded-full",
       "border",
-      "border-emerald-200/35",
-      "bg-emerald-300/10",
+      "border-white/20",
+      "bg-white/5",
       "px-3",
       "py-1",
       "text-xs",
       "font-semibold",
       "uppercase",
       "tracking-[0.16em]",
-      "text-emerald-100",
+      "text-[#A7F3D0]",
     ]}
   >
     {categoria}
@@ -74,16 +77,17 @@ const hrefFinal = hrefCotizar ?? hrefDefault;
 
   <h3
     class:list={[
-      "text-white",
+      "text-[#F5F5F4]",
       "text-xl",
       "font-bold",
       "leading-snug",
       "sm:text-2xl",
+      "mb-4",
     ]}
   >
     {titulo}
   </h3>
-  <p class:list={["mt-1", "text-emerald-100/80", "text-sm"]}>Model: {modelo}</p>
+  <p class:list={["mt-1", "text-[#CFE8D8]", "text-sm"]}>Model: {modelo}</p>
 
   {imageSrc && (
     <div
@@ -115,7 +119,7 @@ const hrefFinal = hrefCotizar ?? hrefDefault;
       "mt-5",
       "space-y-2",
       "text-sm",
-      "text-emerald-50/90",
+      "text-[#CFE8D8]",
       "leading-relaxed",
       "sm:text-base",
     ]}
@@ -134,7 +138,7 @@ const hrefFinal = hrefCotizar ?? hrefDefault;
         "py-2",
       ]}
     >
-      <span class:list={["font-semibold", "text-emerald-100"]}>Voltage</span>
+      <span class:list={["font-semibold", "text-[#E8F5E9]"]}>Voltage</span>
       <span>{voltaje}</span>
     </li>
     <li
@@ -151,7 +155,7 @@ const hrefFinal = hrefCotizar ?? hrefDefault;
         "py-2",
       ]}
     >
-      <span class:list={["font-semibold", "text-emerald-100"]}>Amperage</span>
+      <span class:list={["font-semibold", "text-[#E8F5E9]"]}>Amperage</span>
       <span>{amperaje}</span>
     </li>
     <li
@@ -168,7 +172,7 @@ const hrefFinal = hrefCotizar ?? hrefDefault;
         "py-2",
       ]}
     >
-      <span class:list={["font-semibold", "text-emerald-100"]}>Battery Range</span>
+      <span class:list={["font-semibold", "text-[#E8F5E9]"]}>Battery Range</span>
       <span>{rangoAh} Ah</span>
     </li>
   </ul>
@@ -182,19 +186,20 @@ const hrefFinal = hrefCotizar ?? hrefDefault;
       "items-center",
       "justify-center",
       "mx-auto",
-      "mt-auto",
-      "pt-4",
+      "mt-4",
+      "pt-2",
       "px-6",
-      "py-2.5",
-      "rounded-full",
-      "bg-white",
-      "text-green-900",
+      "py-3",
+      "rounded-xl",
+      "bg-[#F4B400]",
+      "text-black",
       "font-semibold",
       "tracking-wide",
-      "shadow-md",
-      "hover:bg-emerald-100",
-      "transition",
-      "duration-200",
+      "shadow-[0_8px_25px_rgba(244,180,0,0.25)]",
+      "hover:bg-[#d99d00]",
+      "transition-all",
+      "duration-300",
+      "hover:scale-105",
       "text-sm",
       "sm:text-base",
     ]}

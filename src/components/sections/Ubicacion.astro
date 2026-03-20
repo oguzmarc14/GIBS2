@@ -15,7 +15,7 @@ interface Props {
 const {
   class: className = "",
   id = "ubicacion",
-  title = "Ubicacion",
+  title = "Location",
   address = "12415 Shoemaker Ave",
   city = "Santa Fe Springs, CA 90670",
   phone = "+1 (555) 123-4567",
@@ -46,7 +46,8 @@ const {
       <p class="mb-3 text-sm font-semibold tracking-[0.28em] text-emerald-200 uppercase">Visit Us</p>
       <h3 class="text-3xl font-bold leading-tight text-white md:text-5xl">{title}</h3>
       <p class="mx-auto mt-4 max-w-3xl text-base text-emerald-100/90 md:text-lg">
-        Estamos listos para atenderte en nuestras instalaciones y ayudarte con tus necesidades de baterias industriales.
+        Visit our facility for professional support with industrial batteries,
+        charger diagnostics, and preventive maintenance services.
       </p>
     </div>
 
@@ -68,13 +69,13 @@ const {
           rel="noopener noreferrer"
           class="mx-auto mt-8 inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 font-semibold tracking-wide text-green-900 shadow-md transition duration-200 hover:bg-emerald-100 md:mx-0"
         >
-          Como llegar
+          Get Directions
         </a>
       </article>
 
       <article class="overflow-hidden rounded-2xl border border-emerald-200/20 bg-white/6 shadow-[0_16px_35px_rgba(0,0,0,0.35)] backdrop-blur-sm">
         <iframe
-          title="Mapa de ubicacion de GIBS"
+          title="GIBS location map"
           src={mapUrl}
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"

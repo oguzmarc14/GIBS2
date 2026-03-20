@@ -30,78 +30,91 @@ const {
 const isLight = theme === "light";
 ---
 
-<nav>
+<nav
+  class:list={[
+    "relative",
+    "md:fixed",
+    "md:top-4",
+    "md:left-1/2",
+    "md:-translate-x-1/2",
+    "z-50 md:z-50",
+    "w-full",
+    "px-0",
+    "md:px-3",
+    "pointer-events-auto",
+  ]}
+>
   <ul
     class:list={[
       "flex",
       "justify-center",
       "items-center",
-      "sm:w-6/9",
-      "min-[770px]:w-11/12",
-      "lg:w-4/5",
-      "min-[1100px]:w-6/9",
-      "w-full",
+      "w-fit",
+      "min-w-max",
+      "max-w-[calc(100vw-1rem)]",
       "mx-auto",
-      "gap-0.5",
-      "sm:gap-1",
-      "py-2.5",
+      "gap-0",
+      "sm:gap-0.5",
+      "py-2",
+      "md:py-3",
       "px-1.5",
       "sm:px-2",
-      "rounded-full",
+      "md:px-4",
+      "rounded-xl",
+      "md:rounded-full",
       "border",
-      isLight ? "border-emerald-900/25" : "border-emerald-200/45",
-      "bg-gradient-to-r",
-      isLight ? "from-white/95" : "from-[#223126]/95",
-      isLight ? "via-[#f2f0e8]/90" : "via-[#324133]/92",
-      isLight ? "to-white/95" : "to-[#3f3528]/94",
+      isLight ? "border-[#0B2A21]/20" : "border-[#A7F3D0]/28",
+      isLight ? "bg-white/88" : "bg-[#0B2A21]/78",
+      "ring-1",
+      isLight ? "ring-[#0B2A21]/10" : "ring-[#A7F3D0]/20",
       "backdrop-blur-md",
-      isLight ? "shadow-[0_8px_22px_rgba(24,34,22,0.2)]" : "shadow-[0_8px_22px_rgba(6,18,10,0.45)]",
+      "shadow-[0_12px_36px_rgba(0,0,0,0.42)]",
+      isLight ? "" : "shadow-[0_0_28px_rgba(31,122,92,0.2)]",
       "overflow-x-auto",
       "whitespace-nowrap",
       "[scrollbar-width:none]",
       "[-ms-overflow-style:none]",
       "[&::-webkit-scrollbar]:hidden",
-      isLight ? "hover:from-[#f6f5ef]/95" : "hover:from-[#27372a]/95",
-      isLight ? "hover:via-white/95" : "hover:via-[#364939]/93",
-      isLight ? "hover:to-[#f0eee4]/95" : "hover:to-[#453b2d]/95",
-      "text-sm",
-      "sm:text-[15px]",
+      "text-xs",
+      "sm:text-sm",
+      "md:text-[15px]",
       "min-[1100px]:text-base",
       "hover:scale-100",
       "sm:hover:scale-100",
-      "duration-300"
+      "duration-300",
+      "pointer-events-auto"
 
     ]}
   >
-    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", "border-r", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
-      <a href={href1} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
+    <li class:list={["relative", "group", "px-1", "sm:px-1.5", "md:px-2.5", "border-l", "border-r", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href1} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option1}
-        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
-    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", "border-r", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
-      <a href={href2} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
+    <li class:list={["relative", "group", "px-1", "sm:px-1.5", "md:px-2.5", "border-l", "border-r", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href2} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option2}
-        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
-    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", "border-r", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
-      <a href={href3} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
+    <li class:list={["relative", "group", "px-1", "sm:px-1.5", "md:px-2.5", "border-l", "border-r", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href3} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option3}
-        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
-    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", "border-r", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
-      <a href={href4} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
+    <li class:list={["relative", "group", "px-1", "sm:px-1.5", "md:px-2.5", "border-l", "border-r", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href4} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option4}
-        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
     {option5 && (
-    <li class:list={["relative", "group", "px-1.5", "sm:px-2", "border-l", isLight ? "border-emerald-900/20" : "border-emerald-200/35"]}>
-      <a href={href5} class:list={["text-sm", "min-[1100px]:text-base", "font-semibold", "transition", "duration-300", isLight ? "text-[#2f3d2d]" : "text-emerald-100", isLight ? "group-hover:text-emerald-800" : "group-hover:text-emerald-300"]}>
+    <li class:list={["relative", "group", "px-1", "sm:px-1.5", "md:px-2.5", "border-l", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href5} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option5}
-        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-emerald-800" : "bg-emerald-300"]}></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
     )}

@@ -12,23 +12,21 @@ const isLight = theme === "light";
 <header
   class:list={[
     "relative",
-    "sticky",
-    "top-0",
-    "z-50",
+    "z-40",
     "overflow-hidden",
     "w-full",
     "px-4",
     "py-3",
-    "sm:py-5",
+    "sm:py-6",
     "md:px-8",
     "bg-gradient-to-b",
-    isLight ? "from-white" : "from-[#1b261d]",
-    isLight ? "via-[#f2f0e8]" : "via-[#243225]",
-    isLight ? "to-white" : "to-[#2d261b]",
+    isLight ? "from-[#0F3D2E]" : "from-[#0F3D2E]",
+    isLight ? "via-[#0B2A21]" : "via-[#0B2A21]",
+    isLight ? "to-[#0F3D2E]" : "to-[#0F3D2E]",
     "border",
-    isLight ? "border-emerald-900/25" : "border-emerald-200/35",
+    isLight ? "border-white/12" : "border-white/12",
     "backdrop-blur-xl",
-    isLight ? "shadow-[0_16px_40px_rgba(24,34,22,0.22)]" : "shadow-[0_16px_40px_rgba(8,20,12,0.45)]",
+    isLight ? "shadow-[0_16px_40px_rgba(0,0,0,0.35)]" : "shadow-[0_16px_40px_rgba(0,0,0,0.35)]",
   ]}
 >
   <div
@@ -42,54 +40,53 @@ const isLight = theme === "light";
       "-translate-x-1/2",
       "rounded-full",
       "blur-3xl",
-      isLight ? "bg-[#32412f]/20" : "bg-emerald-500/20",
+      isLight ? "bg-[#1F7A5C]/18" : "bg-[#1F7A5C]/18",
     ]}
   >
   </div>
 
   <div
-    class="relative z-10 grid w-full grid-cols-1 items-center justify-items-center gap-3 sm:gap-4 md:grid-cols-[auto_1fr_auto] md:gap-6"
+    class="relative z-10 grid w-full grid-cols-1 items-center justify-items-center gap-3 sm:gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-6"
   >
-    <img
-      src="/logo.png"
-      alt="Logo"
-      class:list={[
-        "order-1",
-        "justify-self-center",
-        "md:justify-self-start",
-        "w-16",
-        "h-16",
-        "sm:w-20",
-        "sm:h-20",
-        "md:w-24",
-        "md:h-24",
-        "lg:w-28",
-        "lg:h-28",
-        "xl:h-28",
-        "shrink-0",
-        "hover:scale-110",
-        "duration-300",
-        "md:ml-0"
-      ]}
-    />
+    <a href="/" aria-label="Go to homepage" class="order-1 justify-self-center md:justify-self-start">
+      <img
+        src="/logo.png"
+        alt="GIBS Logo"
+        class:list={[
+          "w-16",
+          "h-16",
+          "sm:w-20",
+          "sm:h-20",
+          "md:w-24",
+          "md:h-24",
+          "lg:w-28",
+          "lg:h-28",
+          "xl:h-28",
+          "shrink-0",
+          "hover:scale-110",
+          "duration-300",
+          "md:ml-0"
+        ]}
+      />
+    </a>
 
-    <div class:list={["order-3", "md:order-2", "w-full", "max-w-4xl"]}>
+    <div class:list={["order-3", "md:order-2", "w-full", "md:w-auto"]}>
       <div
-        class:list={["relative", "z-20", "mb-3", "md:mb-4", "mx-auto", "w-full", "md:w-full", "xl:w-5/7"]}
+        class:list={["relative", "z-20", "h-auto", "md:h-16", "mb-2", "md:mb-3", "mx-auto", "w-full", "md:w-full", "xl:w-5/7"]}
       >
         <slot />
       </div>
       <h3
       class:list={[
-        isLight ? "text-[#2e3b2b]" : "text-emerald-50",
+        isLight ? "text-[#CFE8D8]" : "text-[#CFE8D8]",
         "border",
-        isLight ? "border-[#32412f]/40" : "border-emerald-200/45",
-        isLight ? "bg-white/75" : "bg-black/25",
+        isLight ? "border-white/20" : "border-white/20",
+        isLight ? "bg-white/5" : "bg-white/5",
         "backdrop-blur-sm",
-        "rounded-2xl",
+        "rounded-full",
         "px-3",
-        "mt-4",
-        "md:mt-8",
+        "mt-3",
+        "md:mt-6",
         "sm:px-2",
         "py-1.5",
         "text-[10px]",
@@ -107,8 +104,9 @@ const isLight = theme === "light";
         "tracking-wide",
         "leading-tight",
         "justify-self-center",
+        "shadow-[0_8px_24px_rgba(0,0,0,0.28)]",
         "hover:shadow-2xl",
-        isLight ? "hover:shadow-[#32412f]/35" : "hover:shadow-emerald-800/70",
+        isLight ? "hover:shadow-[0_0_30px_rgba(31,122,92,0.15)]" : "hover:shadow-[0_0_30px_rgba(31,122,92,0.15)]",
         "hover:duration-300"
       ]}
     >
@@ -129,16 +127,16 @@ const isLight = theme === "light";
         "md:translate-x-0",
         "xl:translate-x-1",
         "2xl:translate-x-2",
-        "text-[1.8rem]",
+        "text-[1.55rem]",
         "min-[500px]:text-[2.2rem]",
         "min-[980px]:text-[2.7rem]",
         "min-[1100px]:text-[3.2rem]",
         "min-[1201px]:text-[3.5rem]",
         "min-[1536px]:text-[4rem]",
         "font-extrabold",
-        isLight ? "text-[#32412f]" : "text-emerald-200",
+        isLight ? "text-[#E8F5E9]" : "text-[#E8F5E9]",
         "leading-tight",
-        "drop-shadow-md",
+        "drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]",
       ]}
     >
       <span>{h1Title}</span>

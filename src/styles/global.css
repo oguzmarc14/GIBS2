@@ -3,10 +3,29 @@
 
 body {
   font-family: "Manrope", sans-serif;
+  background-color: #0B2A21;
+  color: #E8F5E9;
 }
 
 h1,
 h2,
 h3 {
   font-family: "Cinzel", serif;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px) scale(0.985);
+  filter: blur(4px);
+  transition:
+    opacity 620ms ease,
+    transform 620ms ease,
+    filter 620ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }

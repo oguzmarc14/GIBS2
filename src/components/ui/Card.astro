@@ -9,29 +9,30 @@ interface Props {
 const { h2Text, description, srcImage, srcDireccion } = Astro.props as Props;
 ---
 
-<article class:list={["relative", "h-full", "group", "w-full", "max-w-[22rem]"]}>
+<article data-reveal class:list={["relative", "h-full", "group", "w-full", "max-w-[22rem]"]}>
   <div
     class:list={[
       "flex",
       "flex-col",
       "h-full",
-      "bg-white/6",
+      "bg-[#145A35]/80",
       "backdrop-blur-sm",
       "w-full",
       "min-h-[31rem]",
       "p-7",
       "rounded-2xl",
       "border",
-      "border-emerald-200/20",
-      "shadow-[0_16px_35px_rgba(0,0,0,0.35)]",
+      "border-white/10",
+      "shadow-[0_10px_30px_rgba(0,0,0,0.18)]",
       "relative",
       "transition-transform",
       "duration-300",
       "group-hover:-translate-y-1",
+      "group-hover:shadow-[0_14px_40px_rgba(0,0,0,0.25)]",
     ]}
   >
-    <h2 class:list={["mb-3", "text-2xl", "text-white", "font-bold", "leading-snug"]}>{h2Text}</h2>
-    <p class:list={["text-emerald-50/90", "leading-relaxed", "text-sm", "md:text-base"]}>{description}</p>
+    <h2 class:list={["mb-3", "text-2xl", "text-[#F5F5F4]", "font-bold", "leading-snug", "drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"]}>{h2Text}</h2>
+    <p class:list={["text-[#CFE8D8]", "leading-relaxed", "text-sm", "md:text-base"]}>{description}</p>
     <div class="mt-6 overflow-hidden rounded-2xl border border-white/15">
       <img
         src={srcImage}
@@ -49,19 +50,20 @@ const { h2Text, description, srcImage, srcDireccion } = Astro.props as Props;
         "mt-auto",
         "pt-2",
         "px-6",
-        "py-2.5",
-        "rounded-full",
-        "bg-white",
-        "text-green-900",
+        "py-3",
+        "rounded-xl",
+        "bg-[#F4B400]",
+        "text-black",
         "font-semibold",
         "tracking-wide",
-        "shadow-md",
-        "hover:bg-emerald-100",
-        "transition",
-        "duration-200",
+        "shadow-[0_8px_25px_rgba(244,180,0,0.25)]",
+        "hover:bg-[#d99d00]",
+        "transition-all",
+        "duration-300",
+        "hover:scale-105",
       ]}
     >
-      Ver mas
+      Learn more
     </a>
   </div>
 </article>
