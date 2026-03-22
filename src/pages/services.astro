@@ -4,24 +4,24 @@ import Header from "../components/ui/Header.astro";
 import Footer from "../components/ui/Footer.astro";
 import NavBar from "../components/ui/NavBar.astro";
 import CardsService from "../components/sections/CardsService.astro";
+import BottomContact from "../components/sections/BottomContact.astro";
 ---
 
 <Layout>
+  <NavBar
+    option1="Home"
+    option2="Services"
+    option3="Batteries"
+    option4="Contact Us"
+    href1="/"
+    href2="/services"
+    href3="/baterias"
+    href4="/contacto"
+  />
   <Header
     h1Title="GIBS"
     description="Industrial battery service"
-  >
-    <NavBar
-      option1="Home"
-      option2="Services"
-      option3="Batteries"
-      option4="Contact Us"
-      href1="/"
-      href2="/services"
-      href3="/baterias"
-      href4="/contacto"
-    />
-  </Header>
+  />
    
 <section
   id="services"
@@ -34,7 +34,7 @@ import CardsService from "../components/sections/CardsService.astro";
 >
   <div class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#1F7A5C]/20 blur-3xl"></div>
 
-  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12">
     <div class="text-center mb-10 sm:mb-14">
       <p class="mb-4 text-sm font-semibold tracking-[0.25em] text-[#A7F3D0] uppercase">
         Professional Support
@@ -67,6 +67,7 @@ import CardsService from "../components/sections/CardsService.astro";
   </div>
 </section>
 
+  <BottomContact />
   <Footer companyName="GIBS" />
 </Layout>
 

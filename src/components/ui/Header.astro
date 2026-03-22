@@ -26,7 +26,7 @@ const isLight = theme === "light";
     "border",
     isLight ? "border-white/12" : "border-white/12",
     "backdrop-blur-xl",
-    isLight ? "shadow-[0_16px_40px_rgba(0,0,0,0.35)]" : "shadow-[0_16px_40px_rgba(0,0,0,0.35)]",
+    isLight ? "shadow-[0_16px_40px_rgba(0,0,0,0.35),0_0_40px_rgba(31,122,92,0.4)]" : "shadow-[0_16px_40px_rgba(0,0,0,0.35),0_0_40px_rgba(31,122,92,0.4)]",
   ]}
 >
   <div
@@ -46,15 +46,15 @@ const isLight = theme === "light";
   </div>
 
   <div
-    class="relative z-10 grid w-full grid-cols-1 items-center justify-items-center gap-3 sm:gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-6"
+    class="relative z-10 grid w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center gap-3 sm:gap-4 md:gap-6"
   >
-    <a href="/" aria-label="Go to homepage" class="order-1 justify-self-center md:justify-self-start">
+    <a href="/" aria-label="Go to homepage" class="order-1 justify-self-start">
       <img
         src="/logo.png"
         alt="GIBS Logo"
         class:list={[
-          "w-16",
-          "h-16",
+          "w-20",
+          "h-20",
           "sm:w-20",
           "sm:h-20",
           "md:w-24",
@@ -70,9 +70,9 @@ const isLight = theme === "light";
       />
     </a>
 
-    <div class:list={["order-3", "md:order-2", "w-full", "md:w-auto"]}>
+    <div class:list={["order-2", "w-auto"]}>
       <div
-        class:list={["relative", "z-20", "h-auto", "md:h-16", "mb-2", "md:mb-3", "mx-auto", "w-full", "md:w-full", "xl:w-5/7"]}
+        class:list={["relative", "z-20", "h-16", "mb-3", "mx-auto", "w-full", "xl:w-5/7"]}
       >
         <slot />
       </div>
@@ -104,9 +104,9 @@ const isLight = theme === "light";
         "tracking-wide",
         "leading-tight",
         "justify-self-center",
-        "shadow-[0_8px_24px_rgba(0,0,0,0.28)]",
+        "shadow-[0_8px_24px_rgba(0,0,0,0.28),0_0_25px_rgba(31,122,92,0.5)]",
         "hover:shadow-2xl",
-        isLight ? "hover:shadow-[0_0_30px_rgba(31,122,92,0.15)]" : "hover:shadow-[0_0_30px_rgba(31,122,92,0.15)]",
+        isLight ? "hover:shadow-[0_0_30px_rgba(31,122,92,0.35)]" : "hover:shadow-[0_0_30px_rgba(31,122,92,0.35)]",
         "hover:duration-300"
       ]}
     >
@@ -116,19 +116,17 @@ const isLight = theme === "light";
 
     <h1
       class:list={[
-        "order-2",
-        "md:order-3",
+        "order-3",
         "inline-flex",
         "hover:scale-110",
         "duration-300",
         "items-end",
-        "justify-self-center",
-        "md:justify-self-end",
+        "justify-self-end",
         "md:translate-x-0",
         "xl:translate-x-1",
         "2xl:translate-x-2",
         "text-[1.55rem]",
-        "min-[500px]:text-[2.2rem]",
+        "min-[500px]:text-[2.0rem]",
         "min-[980px]:text-[2.7rem]",
         "min-[1100px]:text-[3.2rem]",
         "min-[1201px]:text-[3.5rem]",

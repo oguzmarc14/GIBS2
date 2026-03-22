@@ -7,26 +7,25 @@ import Cards from "../components/sections/Cards.astro";
 import ReparacionesBaterias from "../components/sections/ReparacionesBaterias.astro";
 import Ubicacion from "../components/sections/Ubicacion.astro";
 import Recomendacion from "../components/sections/Recomendacion.astro";
+import BottomContact from "../components/sections/BottomContact.astro";
 ---
 
 <Layout>
-  <div>
-    <Header h1Title="GIBS" description="Industrial Battery Service">
-    <NavBar
-      option1="Home"
-      option2="Services"
-      option3="Batteries"
-      option4="Contact Us"
-      href1="/"
-      href2="/services"
-      href3="/baterias"
-      href4="/contacto"
-    />
-  </Header>
-  </div>
+  <NavBar
+    option1="Home"
+    option2="Services"
+    option3="Batteries"
+    option4="Contact Us"
+    href1="/"
+    href2="/services"
+    href3="/baterias"
+    href4="/contacto"
+  />
+  <Header h1Title="GIBS" description="Industrial Battery Service" />
   <ReparacionesBaterias />
   <Cards id="services" />
   <Recomendacion />
   <Ubicacion id="ubicacion" />
+  <BottomContact />
   <Footer companyName="GIBS" />
 </Layout>
