@@ -99,15 +99,10 @@ const mapsHref =
             Complete the form and WhatsApp will open with your message ready.
           </p>
 
-          <form id="contact-whatsapp-form" class="mt-6 space-y-4">
+          <form id="contact-whatsapp-form" data-whatsapp-number={whatsappNumber} class="mt-6 space-y-4">
             <div>
               <label for="nombre" class="mb-1 block text-sm font-semibold text-emerald-100">Name</label>
               <input id="nombre" name="Nombre" type="text" required class="w-full rounded-xl border border-white/20 bg-black/10 px-4 py-2.5 text-sm text-white placeholder:text-emerald-100/70 focus:border-emerald-200/40 focus:outline-none" placeholder="Your name" />
-            </div>
-
-            <div>
-              <label for="email-contacto" class="mb-1 block text-sm font-semibold text-emerald-100">Email</label>
-              <input id="email-contacto" name="Email" type="email" class="w-full rounded-xl border border-white/20 bg-black/10 px-4 py-2.5 text-sm text-white placeholder:text-emerald-100/70 focus:border-emerald-200/40 focus:outline-none" placeholder="you@email.com" />
             </div>
 
             <div>
@@ -117,11 +112,11 @@ const mapsHref =
 
             <div>
               <label for="servicio" class="mb-1 block text-sm font-semibold text-emerald-100">Topic</label>
-              <select id="servicio" name="Tema" class="w-full rounded-xl border border-white/20 bg-black/20 px-4 py-2.5 text-sm text-white focus:border-emerald-200/40 focus:outline-none">
-                <option value="Battery purchase">Battery purchase</option>
-                <option value="Industrial services">Industrial services</option>
-                <option value="Preventive maintenance">Preventive maintenance</option>
-                <option value="Other">Other</option>
+              <select id="servicio" name="Tema" class="w-full rounded-xl border border-emerald-200/35 bg-emerald-950/65 px-4 py-2.5 text-sm text-emerald-50 focus:border-emerald-300 focus:outline-none">
+                <option value="Battery purchase" class="bg-[#145a35] text-white">Battery purchase</option>
+                <option value="Industrial services" class="bg-[#145a35] text-white">Industrial services</option>
+                <option value="Preventive maintenance" class="bg-[#145a35] text-white">Preventive maintenance</option>
+                <option value="Other" class="bg-[#145a35] text-white">Other</option>
               </select>
             </div>
 
@@ -143,12 +138,13 @@ const mapsHref =
     const form = document.getElementById("contact-whatsapp-form");
 
     if (form instanceof HTMLFormElement) {
+      const whatsappNumberForm = form.dataset.whatsappNumber || "17142737944";
+
       form.addEventListener("submit", (event) => {
         event.preventDefault();
 
         const data = new FormData(form);
         const nombre = (data.get("Nombre") || "").toString().trim();
-        const emailForm = (data.get("Email") || "").toString().trim();
         const telefono = (data.get("Telefono") || "").toString().trim();
         const tema = (data.get("Tema") || "").toString().trim();
         const mensaje = (data.get("Mensaje") || "").toString().trim();
@@ -157,7 +153,6 @@ const mapsHref =
           "Hello GIBS, I want more information.",
           "",
           `Name: ${nombre || "N/A"}`,
-          `Email: ${emailForm || "N/A"}`,
           `Phone: ${telefono || "N/A"}`,
           `Topic: ${tema || "N/A"}`,
           "",
@@ -165,8 +160,8 @@ const mapsHref =
           mensaje || "N/A",
         ].join("\n");
 
-        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-        window.open(url, "_blank", "noopener,noreferrer");
+        const url = `https://wa.me/${whatsappNumberForm}?text=${encodeURIComponent(text)}`;
+        window.location.href = url;
       });
     }
   </script>
