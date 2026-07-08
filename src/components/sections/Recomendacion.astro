@@ -1,7 +1,8 @@
 ---
 import CardRecomendacion from "../ui/CardRecomendacion.astro";
 
-const yelpUrl = "https://www.yelp.com/biz/gibs-green-industrial-battery-service-santa-fe-springs?dd_referrer=https%3A%2F%2Fwww.google.com%2F";
+const yelpUrl =
+  "https://www.yelp.com/biz/gibs-green-industrial-battery-service-santa-fe-springs?dd_referrer=https%3A%2F%2Fwww.google.com%2F";
 
 const recomendaciones = [
   {
@@ -28,7 +29,8 @@ const recomendaciones = [
     titulo: "Reliable long-term support for industrial battery performance",
     descripcion:
       "Yelp feedback emphasizes consistent results across preventive maintenance, battery replacement, and industrial charging system support.",
-    beneficio: "Extend battery life and protect your operation from costly interruptions.",
+    beneficio:
+      "Extend battery life and protect your operation from costly interruptions.",
     href: yelpUrl,
     ctaText: "Visit our Yelp page",
     fuente: "Yelp",
@@ -37,21 +39,36 @@ const recomendaciones = [
 ];
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-b from-[#0b3b22] via-[#145a35] to-[#0b3b22] py-12">
-  <div class="pointer-events-none absolute top-12 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"></div>
+<section
+  class="relative overflow-hidden bg-gradient-to-b from-[#0b3b22] via-[#145a35] to-[#0b3b22] py-12"
+>
+  <div
+    class="pointer-events-none absolute top-12 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"
+  >
+  </div>
 
   <div class="relative z-10 mx-auto max-w-7xl px-6">
     <div class="mb-14 text-center">
-      <p class="mb-4 text-sm font-semibold tracking-[0.28em] text-emerald-200 uppercase">Yelp references</p>
-      <h2 class="mb-6 text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+      <span
+        class="mb-4 inline-flex rounded-full bg-[#F4B400]/15 px-5 py-2 text-sm font-semibold text-[#F4B400]"
+      >
+        Yelp Refferences
+      </span>
+      <h2
+        class="mb-6 text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
+      >
         Why businesses choose GIBS for industrial battery service
       </h2>
       <p class="mx-auto max-w-4xl text-base text-emerald-100/90 md:text-lg">
-        Verified Yelp references from companies that trust GIBS for industrial battery repair, preventive maintenance, and dependable service in Santa Fe Springs.
+        Verified Yelp references from companies that trust GIBS for industrial
+        battery repair, preventive maintenance, and dependable service in Santa
+        Fe Springs.
       </p>
     </div>
 
-    <div class="grid items-stretch justify-items-center gap-8 md:grid-cols-2 xl:grid-cols-3">
+    <div
+      class="grid items-stretch justify-items-center gap-8 md:grid-cols-2 xl:grid-cols-3"
+    >
       {
         recomendaciones.map((recomendacion) => (
           <CardRecomendacion
