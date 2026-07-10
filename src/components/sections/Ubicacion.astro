@@ -1,0 +1,87 @@
+---
+interface Props {
+  class?: string;
+  id?: string;
+  title?: string;
+  address?: string;
+  city?: string;
+  phone?: string;
+  email?: string;
+  schedule?: string;
+  directionsUrl?: string;
+  mapUrl?: string;
+}
+
+const {
+  class: className = "",
+  id = "ubicacion",
+  title = "Location",
+  address = "12415 Shoemaker Ave",
+  city = "Santa Fe Springs, CA 90670",
+  phone = "+1 (714) 273-7944",
+  email = "info@gibs.com",
+  schedule = "Mon - Fri: 8:00 AM - 6:00 PM",
+  directionsUrl = "https://maps.google.com/?q=12415+Shoemaker+Ave,+Santa+Fe+Springs,+CA+90670",
+  mapUrl = "https://www.google.com/maps?q=12415+Shoemaker+Ave,+Santa+Fe+Springs,+CA+90670&output=embed",
+} = Astro.props as Props;
+---
+
+<section
+  id={id}
+  class:list={[
+    "relative",
+    "overflow-hidden",
+    "w-full",
+    "bg-gradient-to-b",
+    "from-[#0b3b22]",
+    "via-[#145a35]",
+    "to-[#0b3b22]",
+    className,
+  ]}
+>
+  <div class="pointer-events-none absolute bottom-12 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-6 py-12">
+    <div class="mb-12 text-center">
+      <p class="mb-3 text-sm font-semibold tracking-[0.28em] text-emerald-200 uppercase">Visit Us</p>
+      <h3 class="text-3xl font-bold leading-tight text-white md:text-5xl">{title}</h3>
+      <p class="mx-auto mt-4 max-w-3xl text-base text-emerald-100/90 md:text-lg">
+        Visit our facility for professional support with industrial batteries,
+        charger diagnostics, and preventive maintenance services.
+      </p>
+    </div>
+
+    <div class="grid items-stretch gap-8 lg:grid-cols-2">
+      <article class="flex h-full flex-col rounded-2xl border border-emerald-200/20 bg-white/6 p-7 text-center shadow-[0_16px_35px_rgba(0,0,0,0.35)] backdrop-blur-sm md:text-left">
+        <h4 class="text-2xl font-bold text-white">Green Industrial Battery Service</h4>
+
+        <ul class="mt-6 space-y-3 text-sm text-emerald-100/90 md:text-base">
+          <li>{address}</li>
+          <li>{city}</li>
+          <li>{phone}</li>
+          <li>{email}</li>
+          <li>{schedule}</li>
+        </ul>
+
+        <a
+          href={directionsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mx-auto mt-8 inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 font-semibold tracking-wide text-green-900 shadow-md transition duration-200 hover:bg-emerald-100 md:mx-0"
+        >
+          Get Directions
+        </a>
+      </article>
+
+      <article class="overflow-hidden rounded-2xl border border-emerald-200/20 bg-white/6 shadow-[0_16px_35px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+        <iframe
+          title="GIBS location map"
+          src={mapUrl}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="h-[20rem] w-full md:h-full md:min-h-[26rem]"
+        ></iframe>
+      </article>
+    </div>
+  </div>
+</section>

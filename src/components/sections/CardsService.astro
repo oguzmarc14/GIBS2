@@ -1,0 +1,74 @@
+---
+import CardService from "../ui/CardService.astro";
+const services = [
+  {
+    titulo: "Battery Replacement/Repair",
+    descripcion: "Expert industrial battery replacement and battery repair services designed to reduce downtime and extend equipment life. We inspect every cell, deliver a detailed diagnostic report, and recommend the most cost-effective solution for your warehouse, forklift, and material handling battery systems.",
+    imgSrc: "/services/industrial-battery-repair-forklift-cell-maintenance.jpg",
+    imgAlt: "Battery Replacement/Repair Service"
+  },
+  {
+    titulo: "Clean and Neutralize",
+    descripcion: "Professional battery cleaning and neutralization services remove corrosion from batteries, compartments, and charging areas. Using CAL-OSHA approved methods, our technicians improve battery safety, prevent terminal damage, and maintain peak performance for industrial equipment and charging infrastructure.",
+    imgSrc: "/services/industrial-battery-cleaning-neutralizing-forklift-maintenance.jpg",
+    imgAlt: "Clean and Neutralize Service"
+  },
+  {
+    titulo: "Acid Adjustment",
+    descripcion: "Accurate lead-acid battery acid adjustment helps maintain optimal specific gravity levels and reliable charge cycles. Our certified technicians restore electrolyte balance, improve battery efficiency, and safely neutralize and dispose of spent acid using environmentally responsible industry standards.",
+    imgSrc: "/services/acid-adjustment.png",
+    imgAlt: "Acid Adjustment Service"
+  },
+  {
+    titulo: "Charging Stations",
+    descripcion: "Industrial charging station maintenance and testing services keep chargers operating safely and efficiently. We inspect electrical performance, identify hidden faults, and prevent battery damage caused by poor charging conditions, helping reduce operating costs and improve equipment uptime.",
+    imgSrc: "/services/Industrial-battery-charging.png",
+    imgAlt: "Charging Stations Service"
+  },
+  {
+    titulo: "Watering System",
+    descripcion: "Battery watering system evaluation and installation services improve maintenance consistency and reduce manual errors. Proper watering extends industrial battery life, increases performance, and keeps batteries, equipment, and warehouse floors cleaner for safer daily operations.",
+    imgSrc: "/services/industrial-battery-watering-system-valve-forklift-maintenance.jpg",
+    imgAlt: "Watering System Service"
+  },
+  {
+    titulo: "Preventative Maintenance",
+    descripcion: "Preventative maintenance contracts for industrial batteries and chargers help avoid costly downtime and emergency repairs. Scheduled inspections, performance checks, and proactive service planning keep your equipment reliable while lowering long-term operating and replacement costs.",
+    imgSrc: "/services/industrial-battery-preventative-maintenance-forklift-warehouse.jpg",
+    imgAlt: "Preventative Maintenance Contracts"
+  },
+  {
+    titulo: "Charger Repair",
+    descripcion: "Fast industrial charger repair and diagnostics with experienced technicians and advanced testing equipment. We identify component failures, recommend repair or replacement options, and provide on-site or shop service to restore charger reliability and protect battery performance.",
+    imgSrc: "/services/industrial-battery-charger-repair-diagnostics.jpg",
+    imgAlt: "Charger Repair Service"
+  }
+];
+---
+
+{services.map((service, index) => {
+  const isLastCard = index === services.length - 1;
+  const centerLastInMd = services.length % 2 === 1 && isLastCard;
+  const centerLastInXl = services.length % 3 === 1 && isLastCard;
+
+  return (
+    <div
+      class:list={[
+        "w-full",
+        "max-w-96",
+        "mx-auto",
+        centerLastInMd && "md:col-span-2 md:justify-self-center",
+        centerLastInXl && "xl:col-span-1 xl:col-start-2",
+      ]}
+    >
+      <CardService
+        titulo={service.titulo}
+        descripcion={service.descripcion}
+        imgSrc={service.imgSrc}
+        imgAlt={service.imgAlt}
+        ctaText="I'm interested in this service"
+        whatsappMessagePrefix="I'm interested in this service"
+      />
+    </div>
+  );
+})}

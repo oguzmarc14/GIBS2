@@ -1,0 +1,67 @@
+---
+interface Props {
+  titulo: string;
+  descripcion: string;
+  beneficio: string;
+  href: string;
+  ctaText?: string;
+  fuente?: string;
+  isExternal?: boolean;
+}
+
+const {
+  titulo,
+  descripcion,
+  beneficio,
+  href,
+  ctaText = "View recommendation",
+  fuente = "Yelp reference",
+  isExternal = false,
+} = Astro.props as Props;
+---
+
+<article data-reveal class="group relative h-full w-full max-w-[24rem]">
+  <div
+    class:list={[
+      "flex",
+      "h-full",
+      "flex-col",
+      "rounded-2xl",
+      "border",
+      "border-emerald-200/20",
+      "bg-white/6",
+      "p-7",
+      "backdrop-blur-sm",
+      "shadow-[0_16px_35px_rgba(0,0,0,0.35)]",
+      "transition-transform",
+      "duration-300",
+      "group-hover:-translate-y-1",
+    ]}
+  >
+    <p class="mb-3 inline-flex w-fit rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-emerald-100 uppercase">
+      Recommended
+    </p>
+
+    <h3 class="mb-3 text-2xl font-bold leading-snug text-white">{titulo}</h3>
+    <p class="text-sm leading-relaxed text-emerald-50/90 md:text-base">{descripcion}</p>
+
+    <div class="my-6 h-px w-full bg-gradient-to-r from-transparent via-emerald-200/30 to-transparent"></div>
+
+    <p class="mb-4 rounded-xl border border-white/10 bg-black/20 p-4 text-sm text-emerald-100/90">
+      <span class="font-semibold text-white">Key benefit: </span>{beneficio}
+    </p>
+
+    <p class="mb-6 text-xs tracking-[0.12em] text-emerald-200/90 uppercase">
+      Source: {fuente}
+    </p>
+
+    <a
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      class="mt-auto inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-semibold tracking-wide text-green-900 shadow-md transition duration-200 hover:bg-emerald-100"
+    >
+      {ctaText}
+    </a>
+  </div>
+</article>

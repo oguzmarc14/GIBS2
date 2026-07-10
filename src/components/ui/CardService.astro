@@ -1,0 +1,83 @@
+---
+interface Props {
+  titulo: string;
+  descripcion: string;
+  imgSrc?: string;
+  imgAlt?: string;
+  ctaText?: string;
+  whatsappMessagePrefix?: string;
+}
+
+const { titulo, descripcion, imgSrc, imgAlt, ctaText, whatsappMessagePrefix } =
+  Astro.props as Props;
+
+const finalCtaText = ctaText ?? "I'm interested in this service";
+const finalWhatsappPrefix =
+  whatsappMessagePrefix ?? "I'm interested in this service";
+const whatsappNumber = "17142737944";
+const whatsappMessage = `${finalWhatsappPrefix}: ${titulo}`;
+const hrefWhatsapp = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+---
+
+<article
+  data-reveal
+  class:list={[
+    "relative",
+    "group",
+    "flex",
+    "flex-col",
+    "h-full",
+    "bg-[#145A35]/80",
+    "backdrop-blur-sm",
+    "border",
+    "border-white/10",
+    "min-h-[34rem]",
+    "sm:min-h-[38rem]",
+    "md:min-h-[42rem]",
+    "px-5",
+    "pb-5",
+    "pt-5",
+    "w-full",
+    "max-w-96",
+    "rounded-2xl",
+    "shadow-[0_10px_30px_rgba(0,0,0,0.18)]",
+    "transition-transform",
+    "duration-300",
+    "group-hover:-translate-y-1",
+    "group-hover:shadow-[0_14px_40px_rgba(0,0,0,0.25)]",
+  ]}
+>
+  <h3
+    class:list={[
+      "text-[#F5F5F4]",
+      "text-xl",
+      "sm:text-2xl",
+      "font-bold",
+      "leading-snug",
+      "min-h-[3.5rem]",
+      "sm:min-h-[4rem]",
+      "text-center",
+      "mb-3",
+    ]}
+  >
+    {titulo}
+  </h3>
+
+  <p class:list={["h-42", "sm:h-44", "md:h-52", "overflow-hidden", "text-[#CFE8D8]", "text-sm", "md:text-base", "leading-relaxed"]}>
+    {descripcion}
+  </p>
+
+  {imgSrc && (
+    <div class="mt-6 h-48 sm:h-56 md:h-64 w-full overflow-hidden rounded-2xl border border-white/15">
+      <img
+        src={imgSrc}
+        alt={imgAlt ?? titulo}
+        class:list={["h-full", "w-full", "object-cover", "transition-transform", "duration-500", "group-hover:scale-105"]}
+      />
+    </div>
+  )}
+
+  <a href={hrefWhatsapp} target="_blank" rel="noopener noreferrer" class:list={["inline-flex", "items-center", "justify-center", "mx-auto", "mt-auto", "pt-2", "px-6", "py-3", "rounded-xl", "bg-[#F4B400]", "text-black", "font-semibold", "tracking-wide", "shadow-[0_8px_25px_rgba(244,180,0,0.25)]", "hover:bg-[#d99d00]", "transition-all", "duration-300", "hover:scale-105", "text-sm", "sm:text-base"]}>
+    {finalCtaText}
+  </a>
+</article>

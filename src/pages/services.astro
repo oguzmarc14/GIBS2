@@ -1,58 +1,72 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Servicess from "../components/sections/Servicess.astro";
-import Subheader from "../components/ui/Subheader.astro";
-import Nueva from "../components/sections/Nueva.astro";
-import Sub from "../components/sections/Sub.astro"
-import Localidad from "../components/sections/Localidad.astro"
+import Header from "../components/ui/Header.astro";
+import Footer from "../components/ui/Footer.astro";
+import NavBar from "../components/ui/NavBar.astro";
+import CardsService from "../components/sections/CardsService.astro";
 ---
 
 <Layout>
-  <Subheader
-    srcImg="/logo.png"
-    h1Title="GIBS"
+  <NavBar
     option1="Home"
     option2="Services"
-    option3="Chargers"
-    option4="About GIBS"
-    option5="Contact Us"
+    option3="Batteries"
+    option4="Contact Us"
+    href1="/"
+    href2="/services"
+    href3="/baterias"
+    href4="/contacto"
   />
-  <Sub/>
-  <Nueva/>
-  <Localidad/>
+  <Header
+    h1Title="GIBS"
+    description="Industrial battery service"
+  />
+   
+<section
+  id="services"
+  class:list={[
+    "relative",
+    "overflow-hidden",
+    "w-full",
+    "bg-[radial-gradient(circle_at_top,_#145A35_0%,_#0F3D2E_45%,_#0B2A21_100%)]",
+  ]}
+>
+  <div class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#1F7A5C]/20 blur-3xl"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12">
+    <div class="text-center mb-10 sm:mb-14">
+      <p class="mb-4 text-sm font-semibold tracking-[0.25em] text-[#A7F3D0] uppercase">
+        Professional Support
+      </p>
+      <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-[#F5F5F4] tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] leading-tight">
+        Industrial battery services built for uptime
+      </h2>
+    </div>
+
+    <div class="mx-auto mb-10 sm:mb-12 max-w-5xl rounded-2xl border border-white/10 bg-[#145A35]/80 p-5 sm:p-7 text-[#CFE8D8] backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+      <p class="text-sm sm:text-base md:text-lg leading-relaxed">
+        Green Industrial Battery Service (GIBS) is a trusted partner for
+        industrial battery repair, forklift battery maintenance, charger
+        diagnostics, and preventive battery service programs. Our technicians
+        help warehouses and material handling operations reduce downtime,
+        improve battery life, and maintain safe charging environments.
+      </p>
+
+    </div>
+
+    <div class="mx-auto max-w-5xl mb-10 sm:mb-12">
+      <h3 class="mt-5 text-center text-xl sm:text-2xl md:text-3xl font-bold text-[#F5F5F4] tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] leading-tight">
+        These are some of the services we provide
+      </h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-8 items-stretch justify-items-center justify-center">
+      <CardsService />
+    </div>
+  </div>
+</section>
+
+  <Footer companyName="GIBS" />
 </Layout>
 
-<!--  -->
 
-<!-- <div
-    class="group relative w-full max-w-sm h-[270px] hover:h-[540px] transition-all duration-700 ease-in-out overflow-hidden rounded-xl bg-white shadow-xl border border-green-800 cursor-pointer"
-  >
-    <img
-      src="/card1.webp"
-      alt="Battery Service"
-      class="absolute top-0 left-0 w-full h-[540px] object-cover z-0 transition-[clip-path] duration-700 ease-in-out
-           [clip-path:inset(25%_0_25%_0)] group-hover:[clip-path:inset(0_0_0_0)]"
-    />
-
-    <div
-      class="absolute bottom-0 left-0 w-full z-10 px-6 py-4 bg-gradient-to-t from-green-950/90 via-green-900/70 to-transparent text-white transition-all duration-700"
-    >
-      <h3
-        class="text-lg font-bold tracking-wide opacity-90 transition-all duration-700 group-hover:translate-y-[-20px] group-hover:opacity-100"
-      >
-        Battery Maintenance
-      </h3>
-      <p
-        class="text-sm mt-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-700 delay-150"
-      >
-        We analyze and restore industrial batteries to improve efficiency and
-        extend their lifespan.
-      </p>
-      <a
-        href="#"
-        class="inline-block mt-4 text-lime-300 text-sm font-semibold opacity-0 group-hover:opacity-100 transition duration-500 delay-300 hover:underline"
-      >
-        Learn more →
-      </a>
-    </div>
-  </div> -->

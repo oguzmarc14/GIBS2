@@ -1,18 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/ui/Header.astro';
-import NavBar from '../components/ui/NavBar.astro';
-import Cards from '../components/sections/Cards.astro';
-import ReparacionesBaterias from '../components/sections/ReparacionesBaterias.astro';
-import Footer from '../components/ui/Footer.astro';
-import Localidad from '../components/sections/Localidad.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/ui/Header.astro";
+import NavBar from "../components/ui/NavBar.astro";
+import Footer from "../components/ui/Footer.astro";
+import Cards from "../components/sections/Cards.astro";
+import ReparacionesBaterias from "../components/sections/ReparacionesBaterias.astro";
+import Ubicacion from "../components/sections/Ubicacion.astro";
+import Recomendacion from "../components/sections/Recomendacion.astro";
+import PrecioBaterias from "../components/sections/PrecioBaterias.astro";
 ---
 
 <Layout>
-    <Header srcImg="/logo.png" h1Title="GIBS" h2Title="We clean and repair battery systems" slogan="Industrial Battery Service"/>
-    <NavBar option1="Home" option2="Services" option3="Chargers" option4="About GIBS" option5="Contact Us"/>
-    <ReparacionesBaterias/>
-    <Cards class='mt-20'/>
-    <Localidad/>
-    <Footer/>
+  <NavBar
+    option1="Home"
+    option2="Services"
+    option3="Batteries"
+    option4="Contact Us"
+    href1="/"
+    href2="/services" 
+    href3="/baterias"
+    href4="/contacto"
+  />
+  <Header h1Title="GIBS" description="Industrial Battery Service" />
+  <ReparacionesBaterias />
+  <Cards id="services" />
+  <PrecioBaterias id="batteries" />
+  <Recomendacion />
+  <Ubicacion id="ubicacion" />
+  <Footer companyName="GIBS" />
 </Layout>

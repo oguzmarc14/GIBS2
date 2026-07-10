@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/ui/Header.astro";
+import NavBar from "../components/ui/NavBar.astro";
+import Footer from "../components/ui/Footer.astro";
+import BateriasSection from "../components/sections/Baterias.astro";
+import BottomContact from "../components/sections/BottomContact.astro";
+---
+
+<Layout>
+  <NavBar
+    option1="Home"
+    option2="Services"
+    option3="Batteries"
+    option4="Contact us"
+    href1="/"
+    href2="/services"
+    href3="/baterias"
+    href4="/contacto"
+  />
+  <Header h1Title="GIBS" description="Industrial Battery Service" />
+  <BateriasSection id="baterias" />
+  <BottomContact />
+  <Footer companyName="GIBS" />
+</Layout>

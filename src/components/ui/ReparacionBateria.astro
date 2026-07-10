@@ -1,0 +1,79 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+  h2Title: string;
+  srcImage: string;
+  description: string;
+  class?: string;
+  isGhost?: boolean;
+  textButton1: string;
+  textButton2: string;
+  hrefButton1: string;
+  hrefButton2: string;
+}
+
+const {
+  h2Title,
+  srcImage,
+  description,
+  class: className = "",
+  textButton1,
+  textButton2,
+  hrefButton1,
+  hrefButton2,
+} = Astro.props as Props;
+---
+
+<article class:list={["relative", className]}>
+  <img
+    class="h-[41rem] sm:h-[45rem] lg:h-[50rem] w-full object-cover object-center"
+    src={srcImage}
+    alt="Industrial battery service"
+  />
+
+  <div class="absolute inset-0 bg-gradient-to-r from-[#0B2A21]/90 via-[#0B2A21]/65 to-[#0B2A21]/40"></div>
+  <div class="absolute inset-0 bg-[#0F3D2E]/25"></div>
+  <div
+    class:list={[
+      "w-[92%]",
+      "md:w-4/5",
+      "absolute",
+      "top-1/2",
+      "left-1/2",
+      "-translate-y-1/2",
+      "-translate-x-1/2",
+      "text-[#E8F5E9]",
+      "text-center",
+      "z-10",
+      "flex",
+      "flex-col",
+      "items-center",
+      "hover:scale-105",
+      "duration-400"
+    ]}
+  >
+    <h1
+      class:list={[
+        "font-bold",
+        "mb-4",
+        "tracking-wide",
+        "drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]",
+        "text-4xl",
+        "sm:text-5xl",
+        "lg:text-6xl",
+        "w-full",
+        "max-w-5xl",
+      ]}
+    >
+      {h2Title}
+    </h1>
+    <h3 class:list={["text-sm", "md:text-base", "text-[#CFE8D8]", "max-w-3xl", "leading-relaxed"]}>{description}</h3>
+    <div
+      class:list={["flex", "sm:flex-row", "flex-col", "mx-auto", "gap-4", "sm:gap-6", "mt-4"]}
+    >
+      <Button href={hrefButton1} text={textButton1} isGhost={true} />
+      <Button href={hrefButton2} text={textButton2} isGhost={false} />
+    </div>
+  </div>
+</article>

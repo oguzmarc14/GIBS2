@@ -1,9 +1,10 @@
 ---
 interface Props {
   class?: string;
+  id?: string;
 }
 
-const { class: className = "" } = Astro.props as Props;
+const { class: className = "", id } = Astro.props as Props;
 
 import Card from "../../components/ui/Card.astro";
 
@@ -14,80 +15,80 @@ const cardsData = [
     description:
       "Emergency response, scheduled maintenance, and complete battery health programs designed to reduce downtime and operational costs.",
     srcImage: "/services.webp",
-    href: "/services",
+    srcDireccion: "/services",
   },
   {
     h2Text: "Chargers",
     chip: "Power Systems",
     description:
-      "Authorized PBM industrial chargers with proven reliability, high charging efficiency, and the right configuration for your fleet.",
-    srcImage: "/charger.webp",
-    href: "/chargerss",
+      "GIBS is an authorized PBM Industrial Chargers dealer. PBM has been manufacturing industrial chargers for almost 50 years! We only sell quality products.",
+    srcImage: "/about.webp",
+    srcDireccion: "/chargers",
   },
   {
     h2Text: "About Us",
     chip: "Trusted Team",
     description:
-      "A technical team focused on long-term partnerships, practical engineering, and dependable support for industrial energy operations.",
+      "Learn why the team at Green Industrial Battery Service is ahead of the competition!  Innovative and competitive, we earn our business through trust and respect",
     srcImage: "/about.webp",
-    href: "/marco",
+    srcDireccion: "/about",
   },
 ];
 ---
 
-<section class:list={["relative", "overflow-hidden", "mx-auto", "max-w-7xl", "px-6", "py-20", className]}>
-  <div class="absolute -left-28 top-16 h-64 w-64 rounded-full bg-cyan-300/20 blur-3xl"></div>
-  <div class="absolute -right-28 bottom-0 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl"></div>
+<section
+  id={id}
+  class:list={[
+    "relative",
+    "overflow-hidden",
+    "w-full",
+    "bg-gradient-to-b",
+    "bg-green-950",
+    "via-[#145a35]",
+    "bg-[#0b3b22]",
+    className,
+  ]}
+>
+  <div class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#1F7A5C]/20 blur-3xl"></div>
 
-  <div class:list={["relative", "text-center", "max-w-4xl", "mx-auto", "mb-14"]}>
-    <p class="mb-4 inline-block rounded-full border border-[#0c6f56]/20 bg-white/70 px-4 py-1 text-xs font-bold uppercase tracking-[0.14em] text-[#0c6f56]">
-      Industrial Energy Excellence
-    </p>
-    <h3
-      class:list={[
-        "text-4xl md:text-6xl",
-        "font-bold",
-        "text-[#08343f]",
-        "mb-6",
-      ]}
-    >
-      Precision Solutions for Battery Performance
-    </h3>
-    <p
-      class:list={[
-        "text-base md:text-lg",
-        "text-slate-700",
-        "max-w-3xl",
-        "mx-auto",
-        "leading-relaxed",
-      ]}
-    >
-      We combine technical know-how, high-quality equipment, and responsive support
-      to keep your operation efficient, safe, and always ready.
-    </p>
-  </div>
+  <div class:list={["relative", "z-10", "mx-auto", "max-w-7xl", "px-4", "sm:px-6", "py-12"]}>
+    <div class:list={["text-center", "mb-10", "sm:mb-14"]}>
+      <span
+        class="mb-4 inline-flex rounded-full bg-[#F4B400]/15 px-5 py-2 text-sm font-semibold text-[#F4B400]"
+      >
+        What We Offer
+      </span>
+      <h3 class:list={["text-2xl", "sm:text-3xl", "md:text-5xl", "lg:text-6xl", "font-bold", "text-[#F5F5F4]", "tracking-wide", "drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]", "mb-5", "sm:mb-6", "leading-tight"]}>
+        Leading experts in industrial battery systems
+      </h3>
+      <p
+        class:list={[
+          "text-sm",
+          "sm:text-base",
+          "md:text-lg",
+          "text-[#CFE8D8]",
+          "max-w-4xl",
+          "font-serif",
+          "mx-auto",
+        ]}
+      >
+        Green Industrial Battery Service combines experience, cutting-edge
+        technology, and personalized support to keep your operations running
+        smoothly and efficiently.
+      </p>
+    </div>
 
-  <div
-    class:list={[
-      "relative",
-      "z-10",
-      "flex",
-      "justify-center",
-      "items-start",
-      "gap-8 lg:gap-10",
-      "flex-wrap",
-    ]}
-  >
-    {
-      cardsData.map((card) => (
-        <Card
-          h2Text={card.h2Text}
-          chip={card.chip}
-          description={card.description}
-          srcImage={card.srcImage}
-          href={card.href}
-        />
-      ))
-    }
+    <div class:list={["grid", "grid-cols-1", "md:grid-cols-2", "xl:grid-cols-3", "gap-5", "sm:gap-8", "items-stretch", "justify-items-center"]}>
+      {
+        cardsData.map((card) => (
+          <Card
+            h2Text={card.h2Text}
+            description={card.description}
+            srcImage={card.srcImage}
+            srcDireccion={card.srcDireccion}
+          />
+        ))
+      }
+    </div>
   </div>
 </section>

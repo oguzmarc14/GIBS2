@@ -4,65 +4,152 @@ interface Props {
   option2: string;
   option3: string;
   option4: string;
-  option5: string;
+  option5?: string;
+  href1: string;
+  href2: string;
+  href3: string;
+  href4: string;
+  href5?: string;
+  theme?: "dark" | "light";
 }
 
-const { option1, option2, option3, option4, option5 } = Astro.props as Props;
+const {
+  option1,
+  option2,
+  option3,
+  option4,
+  option5,
+  href1,
+  href2,
+  href3,
+  href4,
+  href5,
+  theme = "dark",
+} = Astro.props as Props;
+
+const isLight = theme === "light";
 ---
 
-<nav>
+<nav
+  class="nav-shell"
+  class:list={[
+    "fixed",
+    "top-2",
+    "left-1/2",
+    "-translate-x-1/2",
+    "z-50",
+    "w-auto",
+    "px-4",
+    "pointer-events-auto",
+  ]}
+>
   <ul
+    class="nav-list"
     class:list={[
       "flex",
       "justify-center",
       "items-center",
-      "w-full",
-      "flex-wrap",
-      "gap-4 md:gap-9",
-      "bg-white/82",
+      "w-fit",
+      "min-w-max",
+      "max-w-[calc(100vw-2rem)]",
+      "mx-auto",
+      "gap-1",
+      "sm:gap-0.5",
+      "py-2",
+      "md:py-3",
+      "px-4",
+      "rounded-xl",
+      "md:rounded-full",
+      "border",
+      isLight ? "border-[#0B2A21]/20" : "border-[#A7F3D0]/35",
+      isLight ? "bg-white/88" : "bg-[#0B2A21]/85",
+      "ring-1",
+      isLight ? "ring-[#0B2A21]/10" : "ring-[#A7F3D0]/28",
       "backdrop-blur-md",
-      "font-semibold",
-      "text-slate-800",
-      "shadow-[0_14px_30px_rgba(6,44,58,0.14)]",
-      "h-auto min-h-16",
-      "px-5 py-3",
-      "text-sm md:text-base",
-      "tracking-[0.1em]",
-      "border-y border-slate-200/70",
-      "uppercase",
+      "shadow-[0_12px_36px_rgba(0,0,0,0.42)]",
+      isLight ? "" : "shadow-[0_0_35px_rgba(31,122,92,0.35)]",
+      "overflow-x-auto",
+      "whitespace-nowrap",
+      "[scrollbar-width:none]",
+      "[-ms-overflow-style:none]",
+      "[&::-webkit-scrollbar]:hidden",
+      "text-xs",
+      "sm:text-sm",
+      "md:text-[15px]",
+      "min-[1100px]:text-base",
+      "hover:scale-100",
+      "sm:hover:scale-100",
+      "duration-300",
+      "pointer-events-auto"
+
     ]}
   >
-    <li class="relative group">
-      <a href="/" class="transition duration-300 group-hover:text-[#0c6f56]">
+    <li class:list={["nav-item", "relative", "group", "px-1", "border-l", "border-r", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href1} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option1}
-        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
-    <li class="relative group">
-      <a href="/services" class="transition duration-300 group-hover:text-[#0c6f56]">
+    <li class:list={["nav-item", "relative", "group", "px-1", "border-l", "border-r", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href2} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option2}
-        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
-    <li class="relative group">
-      <a href="/chargerss" class="transition duration-300 group-hover:text-[#0c6f56]">
+    <li class:list={["nav-item", "relative", "group", "px-1", "border-l", "border-r", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href3} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option3}
-        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
-    <li class="relative group">
-      <a href="/marco" class="transition duration-300 group-hover:text-[#0c6f56]">
+    <li class:list={["nav-item", "relative", "group", "px-1", "border-l", "border-r", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href4} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option4}
-        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
-    <li class="relative group">
-      <a href="/services" class="transition duration-300 group-hover:text-[#0c6f56]">
+    {option5 && (
+    <li class:list={["nav-item", "relative", "group", "px-1", "border-l", isLight ? "border-[#0B2A21]/15" : "border-white/15"]}>
+      <a href={href5} class:list={["text-xs", "sm:text-sm", "min-[1100px]:text-base", "font-semibold", "transition-colors", "duration-300", isLight ? "text-[#0F3D2E]/90" : "text-[#E8F5E9]/90", isLight ? "group-hover:text-[#1F7A5C]" : "group-hover:text-[#F4B400]"]}>
         {option5}
-        <span class="block h-0.5 w-0 bg-[#30b5ff] transition-all duration-300 group-hover:w-full"></span>
+        <span class:list={["block", "h-0.5", "w-0", "transition-all", "duration-300", "group-hover:w-full", isLight ? "bg-[#1F7A5C]" : "bg-[#F4B400]"]}></span>
       </a>
     </li>
+    )}
   </ul>
 </nav>
+
+<style>
+  @media (min-width: 770px) {
+    .nav-list {
+      padding-left: calc(1rem + 5px);
+      padding-right: calc(1rem + 5px);
+    }
+  }
+
+  @media (max-width: 430px) {
+    .nav-shell {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .nav-list {
+      padding: 0.5rem 1rem;
+      gap: 0.35rem;
+      justify-content: center;
+      border-radius: 0.8rem;
+    }
+
+    .nav-item {
+      padding-left: 0.45rem;
+      padding-right: 0.45rem;
+    }
+
+    .nav-item > a {
+      font-size: 0.78rem;
+      line-height: 1.15;
+    }
+  }
+</style>
 
 

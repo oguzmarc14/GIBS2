@@ -1,0 +1,91 @@
+---
+import CardBaterias from "../ui/CardBaterias.astro";
+
+interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: className = "", id } = Astro.props as Props;
+
+const baterias = [
+  { titulo: "PBM 12 Volt 80 Amp Charger", modelo: "30-108", voltaje: "12V", amperaje: "80A", rangoAh: "400 - 500" },
+  { titulo: "PBM 12 Volt 100 Amp Charger", modelo: "30-112", voltaje: "12V", amperaje: "100A", rangoAh: "500 - 700" },
+
+  { titulo: "PBM 24 Volt 60 Amp Charger", modelo: "30-145", voltaje: "24V", amperaje: "60A", rangoAh: "300 - 420" },
+  { titulo: "PBM 24 Volt 80 Amp Charger", modelo: "30-149", voltaje: "24V", amperaje: "80A", rangoAh: "400 - 560" },
+  { titulo: "PBM 24 Volt 100 Amp Charger", modelo: "30-153", voltaje: "24V", amperaje: "100A", rangoAh: "500 - 700" },
+  { titulo: "PBM 24 Volt 120 Amp Charger", modelo: "30-157", voltaje: "24V", amperaje: "120A", rangoAh: "600 - 840" },
+  { titulo: "PBM 24 Volt 160 Amp Charger", modelo: "30-165", voltaje: "24V", amperaje: "160A", rangoAh: "800 - 1120" },
+
+  { titulo: "PBM 36 Volt 60 Amp Charger", modelo: "30-186", voltaje: "36V", amperaje: "60A", rangoAh: "300 - 420" },
+  { titulo: "PBM 36 Volt 100 Amp Charger", modelo: "30-194", voltaje: "36V", amperaje: "100A", rangoAh: "500 - 700" },
+  { titulo: "PBM 36 Volt 120 Amp Charger", modelo: "30-198", voltaje: "36V", amperaje: "120A", rangoAh: "600 - 840" },
+  { titulo: "PBM 36 Volt 140 Amp Charger", modelo: "30-202", voltaje: "36V", amperaje: "140A", rangoAh: "700 - 980" },
+  { titulo: "PBM 36 Volt 160 Amp Charger", modelo: "30-206", voltaje: "36V", amperaje: "160A", rangoAh: "800 - 1120" },
+
+  { titulo: "PBM 48 Volt 50 Amp Charger", modelo: "30-226", voltaje: "48V", amperaje: "50A", rangoAh: "250 - 350" },
+  { titulo: "PBM 48 Volt 80 Amp Charger", modelo: "30-231", voltaje: "48V", amperaje: "80A", rangoAh: "400 - 560" },
+  { titulo: "PBM 48 Volt 100 Amp Charger", modelo: "30-235", voltaje: "48V", amperaje: "100A", rangoAh: "500 - 700" },
+  { titulo: "PBM 48 Volt 120 Amp Charger", modelo: "30-239", voltaje: "48V", amperaje: "120A", rangoAh: "600 - 840" },
+
+  { titulo: "PBM 72 Volt 80 Amp Charger", modelo: "30-272", voltaje: "72V", amperaje: "80A", rangoAh: "400 - 560" },
+  { titulo: "PBM 72 Volt 100 Amp Charger", modelo: "30-276", voltaje: "72V", amperaje: "100A", rangoAh: "500 - 700" },
+];
+---
+
+<section
+  id={id}
+  class:list={[
+    "relative",
+    "overflow-hidden",
+    "w-full",
+    "bg-[radial-gradient(circle_at_top,_#145A35_0%,_#0F3D2E_45%,_#0B2A21_100%)]",
+    className,
+  ]}
+>
+  <div class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12">
+    <div class="text-center mb-10 sm:mb-14">
+      <p class="mb-4 text-sm font-semibold tracking-[0.28em] text-emerald-200 uppercase">
+        PBM Chargers Catalog
+      </p>
+      <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-5 sm:mb-6 leading-tight">
+        Industrial batteries and chargers
+      </h2>
+      <p class="text-sm sm:text-base md:text-lg text-emerald-100/90 max-w-4xl font-serif mx-auto">
+        Find the ideal PBM model by voltage, amperage, and battery capacity to
+        keep your operation safe, stable, and productive.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-8 items-stretch justify-items-center">
+      {baterias.map((item, index) => {
+        const isLastCard = index === baterias.length - 1;
+        const centerLastInMd = baterias.length % 2 === 1 && isLastCard;
+        const centerLastInXl = baterias.length % 3 === 1 && isLastCard;
+
+        return (
+          <div
+            class:list={[
+              "w-full",
+              "max-w-[23rem]",
+              "mx-auto",
+              centerLastInMd && "md:col-span-2 md:justify-self-center",
+              centerLastInXl && "xl:col-span-1 xl:col-start-2",
+            ]}
+          >
+            <CardBaterias
+              titulo={item.titulo}
+              modelo={item.modelo}
+              voltaje={item.voltaje}
+              amperaje={item.amperaje}
+              rangoAh={item.rangoAh}
+            />
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

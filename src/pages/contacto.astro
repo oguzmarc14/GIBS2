@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/ui/Header.astro";
+import Footer from "../components/ui/Footer.astro";
+import NavBar from "../components/ui/NavBar.astro";
+
+const contactPhone = "+1 (714) 273-7944";
+const contactPhoneHref = "tel:+17142737944";
+const whatsappNumber = "17142737944";
+const whatsappMessage =
+  "Hello GIBS, I want information to buy batteries and request services.";
+const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const email = "info@gibs.com";
+const emailHref = `mailto:${email}`;
+const mapsHref =
+  "https://maps.google.com/?q=12415+Shoemaker+Ave,+Santa+Fe+Springs,+CA+90670";
+---
+
+<Layout>
+  <NavBar
+    option1="Home"
+    option2="Services"
+    option3="Batteries"
+    option4="Contact Us"
+    href1="/"
+    href2="/services"
+    href3="/baterias"
+    href4="/contacto"
+  />
+
+  <Header h1Title="GIBS" description="Industrial Battery Service" />
+
+  <section
+    id="contacto"
+    class="relative w-full overflow-hidden bg-gradient-to-b from-[#0b3b22] via-[#145a35] to-[#0b3b22]"
+  >
+    <div class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6">
+      <div class="mb-10 text-center sm:mb-12">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-emerald-200">
+          Contact
+        </p>
+        <h2 class="text-3xl font-bold leading-tight text-white md:text-5xl">
+          We are ready to help you
+        </h2>
+        <p class="mx-auto mt-4 max-w-3xl text-sm text-emerald-100/90 sm:text-base md:text-lg">
+          Contact us to buy batteries, request services, or resolve
+          any questions about your operation.
+        </p>
+      </div>
+
+      <div class="grid items-stretch gap-8 lg:grid-cols-2">
+        <article class="flex h-full flex-col rounded-2xl border border-emerald-200/20 bg-white/6 p-7 text-center shadow-[0_16px_35px_rgba(0,0,0,0.35)] backdrop-blur-sm md:text-left">
+          <h3 class="text-2xl font-bold text-white">Green Industrial Battery Service</h3>
+
+          <ul class="mt-6 space-y-3 text-sm text-emerald-100/90 md:text-base">
+            <li><span class="font-semibold text-white">Phone:</span> {contactPhone}</li>
+            <li><span class="font-semibold text-white">Email:</span> {email}</li>
+            <li><span class="font-semibold text-white">Hours:</span> Mon - Fri: 8:00 AM - 6:00 PM</li>
+            <li><span class="font-semibold text-white">Address:</span> 12415 Shoemaker Ave, Santa Fe Springs, CA 90670</li>
+          </ul>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href={contactPhoneHref}
+              class="inline-flex items-center justify-center rounded-full border border-emerald-200/30 bg-white/10 px-5 py-2.5 font-semibold text-[#E8F5E9] transition-colors duration-300 hover:bg-white/20"
+            >
+              Call now
+            </a>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-[#F4B400] px-5 py-2.5 font-semibold text-black shadow-[0_8px_25px_rgba(244,180,0,0.25)] transition-all duration-300 hover:scale-105 hover:bg-[#d99d00]"
+            >
+              Send WhatsApp
+            </a>
+            <a
+              href={emailHref}
+              class="inline-flex items-center justify-center rounded-full border border-emerald-200/30 bg-transparent px-5 py-2.5 font-semibold text-[#E8F5E9] transition-colors duration-300 hover:bg-white/10"
+            >
+              Send email
+            </a>
+            <a
+              href={mapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full border border-emerald-200/30 bg-transparent px-5 py-2.5 font-semibold text-[#E8F5E9] transition-colors duration-300 hover:bg-white/10"
+            >
+              View location
+            </a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-emerald-200/20 bg-white/6 p-7 shadow-[0_16px_35px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+          <h3 class="text-center text-2xl font-bold text-white md:text-left">Send us your request</h3>
+          <p class="mt-3 text-center text-sm text-emerald-100/90 md:text-left md:text-base">
+            Complete the form and WhatsApp will open with your message ready.
+          </p>
+
+          <form id="contact-whatsapp-form" data-whatsapp-number={whatsappNumber} class="mt-6 space-y-4">
+            <div>
+              <label for="nombre" class="mb-1 block text-sm font-semibold text-emerald-100">Name</label>
+              <input id="nombre" name="Nombre" type="text" required class="w-full rounded-xl border border-white/20 bg-black/10 px-4 py-2.5 text-sm text-white placeholder:text-emerald-100/70 focus:border-emerald-200/40 focus:outline-none" placeholder="Your name" />
+            </div>
+
+            <div>
+              <label for="telefono" class="mb-1 block text-sm font-semibold text-emerald-100">Phone</label>
+              <input id="telefono" name="Telefono" type="tel" class="w-full rounded-xl border border-white/20 bg-black/10 px-4 py-2.5 text-sm text-white placeholder:text-emerald-100/70 focus:border-emerald-200/40 focus:outline-none" placeholder="+1 (000) 000-0000" />
+            </div>
+
+            <div>
+              <label for="servicio" class="mb-1 block text-sm font-semibold text-emerald-100">Topic</label>
+              <select id="servicio" name="Tema" class="w-full rounded-xl border border-emerald-200/35 bg-emerald-950/65 px-4 py-2.5 text-sm text-emerald-50 focus:border-emerald-300 focus:outline-none">
+                <option value="Battery purchase" class="bg-[#145a35] text-white">Battery purchase</option>
+                <option value="Industrial services" class="bg-[#145a35] text-white">Industrial services</option>
+                <option value="Preventive maintenance" class="bg-[#145a35] text-white">Preventive maintenance</option>
+                <option value="Other" class="bg-[#145a35] text-white">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="mensaje" class="mb-1 block text-sm font-semibold text-emerald-100">Message</label>
+              <textarea id="mensaje" name="Mensaje" rows="5" required class="w-full rounded-xl border border-white/20 bg-black/10 px-4 py-2.5 text-sm text-white placeholder:text-emerald-100/70 focus:border-emerald-200/40 focus:outline-none" placeholder="Tell us what you need..."></textarea>
+            </div>
+
+            <button type="submit" class="inline-flex w-full items-center justify-center rounded-xl bg-[#F4B400] px-6 py-3 font-semibold text-black shadow-[0_8px_25px_rgba(244,180,0,0.25)] transition-all duration-300 hover:scale-[1.01] hover:bg-[#d99d00]">
+              Send via WhatsApp
+            </button>
+          </form>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("contact-whatsapp-form");
+
+    if (form instanceof HTMLFormElement) {
+      const whatsappNumberForm = form.dataset.whatsappNumber || "17142737944";
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const data = new FormData(form);
+        const nombre = (data.get("Nombre") || "").toString().trim();
+        const telefono = (data.get("Telefono") || "").toString().trim();
+        const tema = (data.get("Tema") || "").toString().trim();
+        const mensaje = (data.get("Mensaje") || "").toString().trim();
+
+        const text = [
+          "Hello GIBS, I want more information.",
+          "",
+          `Name: ${nombre || "N/A"}`,
+          `Phone: ${telefono || "N/A"}`,
+          `Topic: ${tema || "N/A"}`,
+          "",
+          "Message:",
+          mensaje || "N/A",
+        ].join("\n");
+
+        const url = `https://wa.me/${whatsappNumberForm}?text=${encodeURIComponent(text)}`;
+        window.location.href = url;
+      });
+    }
+  </script>
+
+  <Footer companyName="GIBS" />
+</Layout>

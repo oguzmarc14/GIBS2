@@ -1,0 +1,100 @@
+---
+interface Props {
+  title: string;
+  price: string;
+  idealFor: string;
+  features: string[];
+  href: string;
+}
+
+const { title, price, idealFor, features, href } = Astro.props as Props;
+---
+
+<article
+  data-reveal
+  class:list={[
+    "relative",
+    "group",
+    "w-full",
+    "h-full",
+  ]}
+>
+  <div
+    class:list={[
+      "flex",
+      "flex-col",
+      "h-full",
+      "min-h-[28rem]",
+      "rounded-2xl",
+      "border",
+      "border-white/10",
+      "bg-[#145A35]/80",
+      "backdrop-blur-sm",
+      "p-7",
+      "shadow-[0_10px_30px_rgba(0,0,0,0.18)]",
+      "transition-all",
+      "duration-300",
+      "group-hover:-translate-y-1",
+      "group-hover:shadow-[0_14px_40px_rgba(0,0,0,0.25)]",
+    ]}
+  >
+    <span class="mb-4 inline-flex w-fit rounded-full bg-[#F4B400]/15 px-4 py-1 text-sm font-semibold text-[#F4B400]">
+      Forklift Battery
+    </span>
+
+    <h3 class="text-2xl font-bold leading-snug text-[#F5F5F4] drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
+      {title}
+    </h3>
+
+    <p class="mt-4 text-sm font-medium uppercase tracking-[0.2em] text-[#CFE8D8]">
+      Starting at
+    </p>
+
+    <p class="mt-2 text-5xl font-black text-[#F4B400]">
+      {price}
+    </p>
+
+    <p class="mt-4 text-base font-semibold text-[#F5F5F4]">
+      Ideal for:
+    </p>
+
+    <p class="mt-1 text-sm text-[#CFE8D8]">
+      {idealFor}
+    </p>
+
+    <ul class="mt-5 space-y-3">
+      {features.map((feature) => (
+        <li class="flex items-start gap-3 text-sm text-[#CFE8D8]">
+          <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#F4B400] text-xs font-black text-black">
+            ✓
+          </span>
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
+
+    <a
+      href={href}
+      class:list={[
+        "mt-8",
+        "inline-flex",
+        "items-center",
+        "justify-center",
+        "rounded-xl",
+        "bg-[#F4B400]",
+        "px-6",
+        "py-3",
+        "font-semibold",
+        "tracking-wide",
+        "text-black",
+        "shadow-[0_8px_25px_rgba(244,180,0,0.25)]",
+        "transition-all",
+        "duration-300",
+        "hover:scale-105",
+        "hover:bg-[#d99d00]",
+      ]}
+    >
+      Request Quote
+    </a>
+  </div>
+</article>

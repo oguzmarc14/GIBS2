@@ -1,0 +1,87 @@
+---
+import CardRecomendacion from "../ui/CardRecomendacion.astro";
+
+const yelpUrl =
+  "https://www.yelp.com/biz/gibs-green-industrial-battery-service-santa-fe-springs?dd_referrer=https%3A%2F%2Fwww.google.com%2F";
+
+const recomendaciones = [
+  {
+    titulo: "Top-rated industrial battery service in Santa Fe Springs",
+    descripcion:
+      "Yelp references highlight rapid diagnostics, dependable repairs, and responsive on-site support when warehouse equipment downtime is critical.",
+    beneficio: "Keep forklifts moving with less downtime and faster recovery.",
+    href: yelpUrl,
+    ctaText: "See Yelp recommendation",
+    fuente: "Yelp",
+    isExternal: true,
+  },
+  {
+    titulo: "Trusted battery repair and charger maintenance experts",
+    descripcion:
+      "Customers on Yelp consistently mention skilled technicians, clear communication, and honest recommendations for battery repair and charger service.",
+    beneficio: "Make confident decisions that reduce emergency service costs.",
+    href: yelpUrl,
+    ctaText: "Read trusted Yelp reviews",
+    fuente: "Yelp",
+    isExternal: true,
+  },
+  {
+    titulo: "Reliable long-term support for industrial battery performance",
+    descripcion:
+      "Yelp feedback emphasizes consistent results across preventive maintenance, battery replacement, and industrial charging system support.",
+    beneficio:
+      "Extend battery life and protect your operation from costly interruptions.",
+    href: yelpUrl,
+    ctaText: "Visit our Yelp page",
+    fuente: "Yelp",
+    isExternal: true,
+  },
+];
+---
+
+<section
+  class="relative overflow-hidden bg-gradient-to-b from-[#0b3b22] via-[#145a35] to-[#0b3b22] py-12"
+>
+  <div
+    class="pointer-events-none absolute top-12 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl"
+  >
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-6">
+    <div class="mb-14 text-center">
+      <span
+        class="mb-4 inline-flex rounded-full bg-[#F4B400]/15 px-5 py-2 text-sm font-semibold text-[#F4B400]"
+      >
+        Yelp Refferences
+      </span>
+      <h2
+        class="mb-6 text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl"
+      >
+        Why businesses choose GIBS for industrial battery service
+      </h2>
+      <p class="mx-auto max-w-4xl text-base text-emerald-100/90 md:text-lg">
+        Verified Yelp references from companies that trust GIBS for industrial
+        battery repair, preventive maintenance, and dependable service in Santa
+        Fe Springs.
+      </p>
+    </div>
+
+    <div
+      class="grid items-stretch justify-items-center gap-8 md:grid-cols-2 xl:grid-cols-3"
+    >
+      {
+        recomendaciones.map((recomendacion) => (
+          <CardRecomendacion
+            titulo={recomendacion.titulo}
+            descripcion={recomendacion.descripcion}
+            beneficio={recomendacion.beneficio}
+            href={recomendacion.href}
+            ctaText={recomendacion.ctaText}
+            fuente={recomendacion.fuente}
+            isExternal={recomendacion.isExternal}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
